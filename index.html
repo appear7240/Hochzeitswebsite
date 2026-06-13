@@ -263,7 +263,7 @@ if('IntersectionObserver' in window){
 var hero=document.getElementById('heroImg'),art=document.getElementById('heroArt');
 hero.addEventListener('error',function(){hero.style.display='none';art.style.display='block';});
 
-var DB=document.getElementById("draftbar");var saved=null;try{saved=localStorage.getItem("entwurf");}catch(e){}function setDraft(d){document.body.setAttribute("data-draft",d);try{localStorage.setItem("entwurf",d);}catch(e){}DB.querySelectorAll("button").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-d")===d);});}setDraft(saved||"a");DB.querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){setDraft(b.getAttribute("data-d"));});});if(/entwurf/.test(location.search)||/entwurf/.test(location.hash)){DB.classList.add("on");}
+var DB=document.getElementById("draftbar");var saved=null;try{saved=localStorage.getItem("entwurf");}catch(e){}function setDraft(d){document.body.setAttribute("data-draft",d);try{localStorage.setItem("entwurf",d);}catch(e){}DB.querySelectorAll("button").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-d")===d);});}setDraft(saved||"a");DB.querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){setDraft(b.getAttribute("data-d"));});});DB.classList.add("on");
 </script>
 </body>
 </html>
