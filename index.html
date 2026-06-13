@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julia & Oliver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,0..100&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --butter:#F2CE4B;
+  --butter-soft:#F8E49A;
+  --cream:#FFFCF2;
+  --ink:#332B1F;
+  --ink-soft:#6E6453;
+  --line:rgba(51,43,31,.14);
+  --rose:#F5D5D8;
+  --sage:#D5E8D8;
+  --sky:#D8E8F5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Karla',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:'Fraunces',serif;font-variation-settings:'SOFT' 100,'opsz' 80}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100svh;
+  background:var(--butter);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:2rem 1.5rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:1rem;
+  border:1px solid rgba(51,43,31,.25);
+  border-radius:2.5rem;
+  pointer-events:none;
+}
+.hero .eyebrow{
+  font-size:.8rem;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:2rem;
+  opacity:.8;
+}
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-size:3.5rem;
+  font-weight:300;
+  margin-bottom:.5rem;
+  line-height:1.1;
+}
+.hero .subtitle{
+  font-size:1rem;
+  font-weight:300;
+  margin-bottom:2rem;
+  opacity:.85;
+}
+.hero-image{
+  width:280px;
+  height:280px;
+  margin:2rem auto;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid var(--ink);
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero .date{
+  font-size:.95rem;
+  font-weight:500;
+  margin-top:1.5rem;
+  opacity:.9;
+}
+
+/* ---------- SECTION ---------- */
+section{
+  padding:4rem 1.5rem;
+  max-width:800px;
+  margin:0 auto;
+}
+section h2{
+  font-family:'Fraunces',serif;
+  font-size:2rem;
+  margin-bottom:2rem;
+  text-align:center;
+  font-weight:400;
+}
+
+/* ---------- TAGESABLAUF ---------- */
+.schedule{
+  background:var(--sky);
+  border-radius:1.5rem;
+  padding:2rem;
+  margin-bottom:1.5rem;
+}
+.schedule-item{
+  display:flex;
+  gap:1.5rem;
+  margin-bottom:1.5rem;
+}
+.schedule-item:last-child{
+  margin-bottom:0;
+}
+.schedule-time{
+  font-weight:600;
+  min-width:70px;
+  color:var(--ink);
+  font-size:.95rem;
+}
+.schedule-event{
+  font-size:.95rem;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+/* ---------- DRESSCODE ---------- */
+.dresscode-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+  margin-top:2rem;
+}
+.dresscode-card{
+  background:var(--rose);
+  padding:1.5rem;
+  border-radius:1.5rem;
+  text-align:center;
+}
+.dresscode-card h3{
+  font-family:'Fraunces',serif;
+  font-size:1.1rem;
+  margin-bottom:1rem;
+  font-weight:400;
+}
+.dresscode-card p{
+  font-size:.9rem;
+  line-height:1.6;
+  color:var(--ink);
+  font-weight:500;
+}
+
+/* ---------- LOCATION ---------- */
+.location{
+  background:var(--sage);
+  border-radius:1.5rem;
+  padding:2rem;
+  text-align:center;
+}
+.location h3{
+  font-family:'Fraunces',serif;
+  font-size:1.3rem;
+  margin-bottom:.5rem;
+  font-weight:400;
+}
+.location p{
+  font-size:.95rem;
+  color:var(--ink);
+  margin-bottom:.5rem;
+}
+.location a{
+  color:var(--ink);
+  text-decoration:underline;
+  font-weight:500;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  text-align:center;
+  padding:2rem 1.5rem;
+  font-size:.85rem;
+  color:var(--ink-soft);
+  border-top:1px solid var(--line);
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:640px){
+  .hero h1{font-size:2.5rem}
+  .hero-image{width:200px;height:200px}
+  section{padding:3rem 1.5rem}
+  section h2{font-size:1.5rem}
+  .dresscode-grid{grid-template-columns:1fr;gap:1rem}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="eyebrow">Wir heiraten</div>
+  <h1 class="serif">Julia & Oliver</h1>
+  <p class="subtitle">Freuen uns auf euer Kommen</p>
+  <div class="hero-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Schloss_Herten_Maerz_2021_Detailaufnahme.jpg/1280px-Schloss_Herten_Maerz_2021_Detailaufnahme.jpg" alt="Schloss Herten">
+  </div>
+  <div class="date">20. August 2027 | Schloss Herten</div>
+</section>
+
+<section id="tagesablauf">
+  <h2 class="serif">Tagesablauf</h2>
+  <div class="schedule">
+    <div class="schedule-item">
+      <div class="schedule-time">13:00</div>
+      <div class="schedule-event">Empfang & Sektpfiff</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">14:00</div>
+      <div class="schedule-event">Trauzeremonie</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">15:00</div>
+      <div class="schedule-event">Fotoshooting</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">16:30</div>
+      <div class="schedule-event">Kaffee & Kuchen</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">19:00</div>
+      <div class="schedule-event">Dinner</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">21:00</div>
+      <div class="schedule-event">Hochzeitstanz & Party</div>
+    </div>
+  </div>
+</section>
+
+<section id="dresscode">
+  <h2 class="serif">Dresscode</h2>
+  <div class="dresscode-grid">
+    <div class="dresscode-card">
+      <h3>Herren</h3>
+      <p>Eleganter Anzug oder Smoking mit Krawatte oder Fliege</p>
+    </div>
+    <div class="dresscode-card">
+      <h3>Damen</h3>
+      <p>Elegantes Kleid oder Kostüm in festlicher Ausstattung</p>
+    </div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="location">
+    <h3 class="serif">Schloss Herten</h3>
+    <p>Schlossplatz 1</p>
+    <p>45699 Herten</p>
+    <p>Deutschland</p>
+  </div>
+</section>
+
+<footer>
+  <p>Julia & Oliver – 20. August 2027 | Mit Liebe gestaltet</p>
+</footer>
+
+</body>
+</html>
