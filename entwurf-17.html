@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only"><meta name="theme-color" content="#F6E7A2"><title>Julia & Oliver — Glas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..500;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root{--butter:#F6E7A2;--deep:#CFA12A;--ink:#2A241B;--inks:#6E6453;--glass:rgba(255,255,255,.5);--gline:rgba(255,255,255,.7)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:Manrope,sans-serif;color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;
+background:radial-gradient(50% 40% at 15% 12%,#FBEFC0,transparent 70%),radial-gradient(46% 38% at 88% 22%,#F4DE86,transparent 72%),radial-gradient(60% 50% at 50% 100%,#F8E9A8,transparent 70%),#F9EEC6;background-attachment:fixed}
+.serif{font-family:Fraunces,serif}
+.nav{position:fixed;top:.8rem;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:1.4rem;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--gline);border-radius:999px;padding:.5rem 1.2rem;box-shadow:0 8px 30px -12px rgba(42,36,27,.3)}
+.nav .mk{font-family:Fraunces,serif;font-weight:500;font-size:1.05rem}.nav a{font-size:.78rem;font-weight:600;letter-spacing:.04em;text-decoration:none;color:var(--inks)}.nav a:hover{color:var(--ink)}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:7rem 1.2rem 3rem;text-align:center}
+.gcard{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--gline);border-radius:30px;box-shadow:0 30px 70px -34px rgba(42,36,27,.45);padding:clamp(2rem,6vw,3.4rem)}
+.hero .gcard{max-width:620px}
+.eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--inks)}
+.hero h1{font-family:Fraunces,serif;font-weight:450;font-size:clamp(2.8rem,11vw,5.6rem);line-height:1;margin:1rem 0 .4rem}.amp{font-style:italic;font-weight:400;color:var(--deep)}
+.hero .mt{font-family:Fraunces,serif;font-style:italic;font-size:clamp(1.2rem,3.6vw,1.6rem);opacity:.82}
+.cd{display:flex;justify-content:center;gap:.6rem;margin-top:1.8rem;flex-wrap:wrap}
+.cd .u{background:rgba(255,255,255,.55);border:1px solid var(--gline);border-radius:16px;padding:.7rem 1rem;min-width:74px}
+.cd .n{font-family:Fraunces,serif;font-size:1.8rem;line-height:1;font-variant-numeric:tabular-nums}.cd .l{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--inks);margin-top:.3rem;font-weight:700}
+.date{margin-top:1.6rem;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--ink)}
+.sec{max-width:680px;margin:0 auto;padding:1.2rem 1.2rem}
+.sec:last-of-type{padding-bottom:3rem}
+.sec h2{font-family:Fraunces,serif;font-weight:500;font-size:clamp(1.6rem,5vw,2.2rem);margin-bottom:1.4rem;text-align:center}
+.row{display:flex;gap:1rem;padding:.7rem 0;border-bottom:1px solid rgba(42,36,27,.1);align-items:baseline}.row:last-child{border-bottom:0}.rt{font-family:Fraunces,serif;font-weight:500;min-width:64px;font-size:1.1rem}.re{color:var(--inks)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}.two h3{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--inks);margin-bottom:.4rem;font-weight:700}.two p{color:var(--ink);font-size:.95rem}
+.note{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid rgba(42,36,27,.1);font-size:.85rem;color:var(--inks)}.dots{display:inline-flex;gap:.4rem;vertical-align:middle;margin-right:.5rem}.dots span{width:12px;height:12px;border-radius:50%}.note b{color:var(--ink)}
+.venue{text-align:center}.venue .vn{font-family:Fraunces,serif;font-size:1.3rem;margin-bottom:.3rem}.venue p{color:var(--inks)}
+.btn{display:inline-block;margin-top:1.2rem;background:var(--ink);color:#FBEFC0;padding:.85rem 2rem;border-radius:14px;text-decoration:none;font-weight:700;letter-spacing:.03em;font-size:.88rem}
+footer{text-align:center;padding:2.5rem 1.5rem;color:var(--inks);font-size:.8rem}.cr{font-size:.66rem;opacity:.8;margin-top:.5rem}
+@media(max-width:520px){.two{grid-template-columns:1fr;gap:1rem}}
+</style></head><body><a href="index.html" style="position:fixed;top:1rem;left:1rem;z-index:99;font:600 .7rem/1 sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.5rem .8rem;border-radius:999px;background:rgba(42,36,27,.85);color:#fff">← Entwürfe</a>
+<nav class="nav"><span class="mk serif">J&amp;O</span><a href="#ablauf">Ablauf</a><a href="#dresscode">Dresscode</a><a href="#anfahrt">Anfahrt</a></nav>
+<header class="hero"><div class="gcard"><span class="eyebrow">Wir heiraten</span><h1 class="serif">Julia <span class="amp">&amp;</span> Oliver</h1><p class="mt">Wir sagen Ja.</p>
+<div class="cd"><div class="u"><div class="n" id="d">–</div><div class="l">Tage</div></div><div class="u"><div class="n" id="h">–</div><div class="l">Std</div></div><div class="u"><div class="n" id="m">–</div><div class="l">Min</div></div><div class="u"><div class="n" id="s">–</div><div class="l">Sek</div></div></div>
+<div class="date">20. August 2027 · Schloss Herten</div></div></header>
+<section class="sec" id="ablauf"><div class="gcard"><h2>Tagesablauf</h2><div class="row"><div class="rt">13:00</div><div class="re">Empfang & Sektpfiff</div></div><div class="row"><div class="rt">14:00</div><div class="re">Trauzeremonie</div></div><div class="row"><div class="rt">15:00</div><div class="re">Fotoshooting</div></div><div class="row"><div class="rt">16:30</div><div class="re">Kaffee & Kuchen</div></div><div class="row"><div class="rt">19:00</div><div class="re">Dinner</div></div><div class="row"><div class="rt">21:00</div><div class="re">Tanz & Party</div></div></div></section>
+<section class="sec" id="dresscode"><div class="gcard"><h2>Dresscode</h2><div class="two"><div><h3>Damen</h3><p>Elegantes Kleid oder Kostüm.</p></div><div><h3>Herren</h3><p>Anzug oder Smoking, Krawatte oder Fliege.</p></div></div><p class="note"><span class="dots"><span style="background:#F5D5D8"></span><span style="background:#E7DDF0"></span><span style="background:#D5E8D8"></span><span style="background:#D8E8F5"></span></span>Pastell willkommen. <b>Kein Rot, kein Weiß/Creme.</b></p></div></section>
+<section class="sec" id="anfahrt"><div class="gcard venue"><h2>Anfahrt</h2><p class="vn serif">Schloss Herten</p><p>Schlossplatz 1, 45699 Herten</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten+45699+Herten" target="_blank" rel="noopener">In Karte öffnen</a></div></section>
+<footer>Julia & Oliver · 20.08.2027 · Schloss Herten<div class="cr">Foto: Frank Vincentz / Wikimedia Commons, CC BY-SA 3.0</div></footer><script>var t=new Date("2027-08-20T13:00:00").getTime();function p(n){return n<10?"0"+n:n}function tk(){var x=t-Date.now();d.textContent=Math.max(0,Math.floor(x/864e5));h.textContent=p(Math.max(0,Math.floor(x%864e5/36e5)));m.textContent=p(Math.max(0,Math.floor(x%36e5/6e4)));s.textContent=p(Math.max(0,Math.floor(x%6e4/1e3)))}tk();setInterval(tk,1e3)</script></body></html>
