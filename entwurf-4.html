@@ -2,37 +2,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Karla:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-:root{--butter:#EFC94C;--soft:#F6E08A;--paper:#FBF6E7;--ink:#26210F;--inks:#6B6443;--gold:#B8901F;--line:rgba(38,33,15,.22)}
+:root{--butter:#F6E7A2;--soft:#FBF1C9;--paper:#FBF8F1;--ink:#26210F;--inks:#6B6443;--gold:#B8901F;--line:rgba(38,33,15,.2)}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Karla,sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .cz{font-family:Cinzel,serif}
 .hero{position:relative;min-height:100svh;background:var(--butter);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem}
-.hero::before{content:"";position:absolute;inset:1rem;border:2px solid var(--ink)}
-.hero::after{content:"";position:absolute;inset:1.5rem;border:1px solid var(--ink)}
-.fan{position:relative;z-index:2;width:90px;height:46px;margin-bottom:1.6rem}
-.fan path{stroke:var(--ink);stroke-width:1.4;fill:none}
+.hero::before{content:"";position:absolute;inset:1rem;border:2px solid var(--ink)}.hero::after{content:"";position:absolute;inset:1.5rem;border:1px solid var(--ink)}
+.fan{position:relative;z-index:2;width:90px;height:46px;margin-bottom:1.6rem}.fan path{stroke:var(--ink);stroke-width:1.4;fill:none}
 .eyebrow{position:relative;z-index:2;font-family:Cinzel,serif;font-size:.78rem;letter-spacing:.5em;text-transform:uppercase;color:var(--ink)}
-.hero h1{position:relative;z-index:2;font-family:Cinzel,serif;font-weight:500;font-size:clamp(2.2rem,9vw,5rem);letter-spacing:.04em;line-height:1.1;margin:1.4rem 0}
-.hero h1 .amp{display:block;font-size:.5em;margin:.3rem 0;color:var(--gold)}
+.hero h1{position:relative;z-index:2;font-family:Cinzel,serif;font-weight:500;font-size:clamp(2.2rem,9vw,5rem);letter-spacing:.04em;line-height:1.1;margin:1.4rem 0}.hero h1 .amp{display:block;font-size:.5em;margin:.3rem 0;color:var(--gold)}
 .rule{position:relative;z-index:2;display:flex;align-items:center;gap:.8rem;color:var(--ink);margin:.4rem 0 1rem}.rule::before,.rule::after{content:"";height:1px;width:46px;background:var(--ink)}.rule span{font-family:Cinzel,serif;font-size:.8rem;letter-spacing:.3em}
 .motto{position:relative;z-index:2;font-family:Cinzel,serif;font-size:clamp(.95rem,3vw,1.2rem);letter-spacing:.12em;color:var(--ink);opacity:.85}
 .date{position:relative;z-index:2;margin-top:1.6rem;font-family:Cinzel,serif;letter-spacing:.22em;font-size:.85rem}
-.sec{padding:clamp(3.5rem,9vw,6rem) 1.5rem;max-width:760px;margin:0 auto;text-align:center}
-.sd{background:var(--ink);color:var(--soft)}.sd .inks,.sd .h2sub{color:var(--soft)}
+.sec{padding:clamp(3.5rem,9vw,6rem) 1.5rem;max-width:760px;margin:0 auto;text-align:center}.alt{background:var(--soft)}
 .dia{display:block;margin:0 auto 1.2rem;width:18px;height:18px;background:var(--gold);transform:rotate(45deg)}
 .head h2{font-family:Cinzel,serif;font-weight:500;font-size:clamp(1.8rem,6vw,2.8rem);letter-spacing:.06em}
 .led{max-width:480px;margin:2.4rem auto 0}.li{display:flex;justify-content:space-between;align-items:baseline;padding:.85rem 0;border-bottom:1px solid var(--line)}.li:last-child{border-bottom:0}.lt{font-family:Cinzel,serif;font-size:1.1rem;letter-spacing:.06em}.le{color:var(--inks);text-align:right}
-.sd .li{border-color:rgba(246,224,138,.28)}.sd .le{color:#E8DCB0}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:1rem}.two h3{font-family:Cinzel,serif;font-size:1.1rem;letter-spacing:.1em;margin-bottom:.6rem}.two p{color:var(--inks);font-size:.96rem}
 .note{margin-top:2.4rem;font-size:.85rem;color:var(--inks)}.dots{display:inline-flex;gap:.4rem;vertical-align:middle;margin-right:.5rem}.dots span{width:11px;height:11px;transform:rotate(45deg)}.note b{color:var(--ink)}
 .venue p{font-family:Cinzel,serif;font-size:1.1rem;letter-spacing:.06em;line-height:1.8}.btn{display:inline-block;margin-top:1.6rem;padding:.8rem 2.2rem;border:1px solid var(--ink);text-decoration:none;color:var(--ink);font-family:Cinzel,serif;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase}.btn:hover{background:var(--ink);color:var(--soft)}
 footer{text-align:center;padding:3rem 1.5rem;border-top:2px solid var(--ink)}footer .fm{font-family:Cinzel,serif;letter-spacing:.3em;font-size:1.1rem}footer p{font-size:.78rem;color:var(--inks);margin-top:.4rem}.cr{font-size:.64rem;opacity:.7;margin-top:.8rem}
 @media(max-width:600px){.two{grid-template-columns:1fr;gap:1.8rem}}
 </style></head><body><a href="index.html" style="position:fixed;top:1rem;left:1rem;z-index:99;font:600 .7rem/1 sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.5rem .8rem;border-radius:999px;background:rgba(42,36,27,.85);color:#fff">← Entwürfe</a>
-<header class="hero"><svg class="fan" viewBox="0 0 90 46"><path d="M45 46 V4"/><path d="M45 46 L25 8"/><path d="M45 46 L65 8"/><path d="M45 46 L8 20"/><path d="M45 46 L82 20"/></svg>
-<span class="eyebrow">Wir heiraten</span><h1 class="cz">Julia<span class="amp">&amp;</span>Oliver</h1>
-<div class="rule"><span>20 · 08 · 2027</span></div><p class="motto">Wir sagen Ja</p><div class="date">Schloss Herten</div></header>
-<section class="sec sd"><div class="head"><span class="dia"></span><h2>Tagesablauf</h2></div>
-<div class="led"><div class="li"><span class="lt">13:00</span><span class="le">Empfang & Sektpfiff</span></div><div class="li"><span class="lt">14:00</span><span class="le">Trauzeremonie</span></div><div class="li"><span class="lt">15:00</span><span class="le">Fotoshooting</span></div><div class="li"><span class="lt">16:30</span><span class="le">Kaffee & Kuchen</span></div><div class="li"><span class="lt">19:00</span><span class="le">Dinner</span></div><div class="li"><span class="lt">21:00</span><span class="le">Hochzeitstanz & Party</span></div></div></section>
+<header class="hero"><svg class="fan" viewBox="0 0 90 46"><path d="M45 46 V4"/><path d="M45 46 L25 8"/><path d="M45 46 L65 8"/><path d="M45 46 L8 20"/><path d="M45 46 L82 20"/></svg><span class="eyebrow">Wir heiraten</span><h1 class="cz">Julia<span class="amp">&amp;</span>Oliver</h1><div class="rule"><span>20 · 08 · 2027</span></div><p class="motto">Wir sagen Ja</p><div class="date">Schloss Herten</div></header>
+<section class="sec alt"><div class="head"><span class="dia"></span><h2>Tagesablauf</h2></div><div class="led"><div class="li"><span class="lt">13:00</span><span class="le">Empfang & Sektpfiff</span></div><div class="li"><span class="lt">14:00</span><span class="le">Trauzeremonie</span></div><div class="li"><span class="lt">15:00</span><span class="le">Fotoshooting</span></div><div class="li"><span class="lt">16:30</span><span class="le">Kaffee & Kuchen</span></div><div class="li"><span class="lt">19:00</span><span class="le">Dinner</span></div><div class="li"><span class="lt">21:00</span><span class="le">Hochzeitstanz & Party</span></div></div></section>
 <section class="sec"><div class="head"><span class="dia"></span><h2>Dresscode</h2></div><div class="two"><div><h3>Damen</h3><p>Elegantes Kleid oder Kostüm in festlicher Ausführung.</p></div><div><h3>Herren</h3><p>Eleganter Anzug oder Smoking, Krawatte oder Fliege.</p></div></div><p class="note"><span class="dots"><span style="background:#F5D5D8"></span><span style="background:#E7DDF0"></span><span style="background:#D5E8D8"></span><span style="background:#D8E8F5"></span></span>Pastelltöne willkommen. <b>Kein Rot, kein Weiß/Creme.</b></p></section>
-<section class="sec venue"><div class="head"><span class="dia"></span><h2>Anfahrt</h2></div><p>Schloss Herten<br>Schlossplatz 1<br>45699 Herten</p><br><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten+45699+Herten" target="_blank" rel="noopener">In Karte öffnen</a></section>
+<section class="sec alt venue"><div class="head"><span class="dia"></span><h2>Anfahrt</h2></div><p>Schloss Herten<br>Schlossplatz 1<br>45699 Herten</p><br><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten+45699+Herten" target="_blank" rel="noopener">In Karte öffnen</a></section>
 <footer><div class="fm">J &amp; O</div><p>20. August 2027 · Schloss Herten</p><p class="cr">Foto: Frank Vincentz / Wikimedia Commons, CC BY-SA 3.0</p></footer></body></html>

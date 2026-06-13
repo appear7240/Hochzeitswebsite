@@ -2,28 +2,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..400&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--butter:#F2D65C;--soft:#F8E9A8;--paper:#FCFAF4;--ink:#211D16;--inks:#7A7163;--line:rgba(33,29,22,.13)}
+:root{--butter:#F6E7A2;--deep:#CFA12A;--paper:#FBF8F1;--ink:#211D16;--inks:#7A7163;--line:rgba(33,29,22,.13)}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Archivo,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .lab{font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--inks);font-weight:600}
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:7rem clamp(1.5rem,8vw,6rem) 4rem;max-width:1100px;margin:0 auto}
-.hero .bar{width:64px;height:6px;background:var(--butter);margin-bottom:2.5rem}
+.hero{min-height:100svh;background:var(--butter);display:flex;flex-direction:column;justify-content:center;padding:7rem clamp(1.5rem,8vw,6rem) 4rem}
+.hero .bar{width:64px;height:6px;background:var(--deep);margin-bottom:2.5rem}
 .hero .nm{font-family:Fraunces,serif;font-weight:300;font-size:clamp(2.2rem,7vw,4rem);line-height:1.05;letter-spacing:-.01em}
 .hero .big{font-family:Fraunces,serif;font-weight:300;font-size:clamp(3.5rem,18vw,11rem);line-height:.9;letter-spacing:-.03em;margin:1.5rem 0 .5rem}
-.hero .mt{font-size:1rem;color:var(--inks);max-width:30ch}
-.hero .mt b{color:var(--ink);font-weight:600}
+.hero .mt{font-size:1rem;color:var(--ink);max-width:30ch;opacity:.85}.hero .mt b{font-weight:600;opacity:1}
 .sec{max-width:1100px;margin:0 auto;padding:clamp(3rem,8vw,6rem) clamp(1.5rem,8vw,6rem);border-top:1px solid var(--line)}
-.sh{font-family:Fraunces,serif;font-weight:300;font-size:clamp(1.6rem,5vw,2.4rem);margin-bottom:2.5rem;display:flex;align-items:baseline;gap:1rem}.sh::before{content:"";width:28px;height:3px;background:var(--butter)}
+.sh{font-family:Fraunces,serif;font-weight:300;font-size:clamp(1.6rem,5vw,2.4rem);margin-bottom:2.5rem;display:flex;align-items:baseline;gap:1rem}.sh::before{content:"";width:28px;height:3px;background:var(--deep)}
 .row{display:flex;gap:1.5rem;padding:1rem 0;border-bottom:1px solid var(--line);align-items:baseline}.row:last-child{border-bottom:0}
 .rt{font-family:Fraunces,serif;font-size:1.3rem;min-width:80px;font-weight:400}.re{color:var(--inks)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,5vw,4rem)}.two h4{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--inks);margin-bottom:.6rem}.two p{font-family:Fraunces,serif;font-weight:300;font-size:1.15rem;line-height:1.5}
 .note{margin-top:2rem;font-size:.9rem;color:var(--inks)}.note b{color:var(--ink);font-weight:600}.dots{display:inline-flex;gap:.4rem;vertical-align:middle;margin-right:.6rem}.dots span{width:12px;height:12px;border-radius:50%}
-.venue p{font-family:Fraunces,serif;font-weight:300;font-size:1.3rem;line-height:1.5}.lnk{display:inline-block;margin-top:1.5rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;border-bottom:2px solid var(--butter);text-decoration:none;color:var(--ink);padding-bottom:.2rem}
+.venue p{font-family:Fraunces,serif;font-weight:300;font-size:1.3rem;line-height:1.5}.lnk{display:inline-block;margin-top:1.5rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;border-bottom:2px solid var(--deep);text-decoration:none;color:var(--ink);padding-bottom:.2rem}
 footer{max-width:1100px;margin:0 auto;padding:3rem clamp(1.5rem,8vw,6rem);border-top:1px solid var(--line);font-size:.8rem;color:var(--inks)}
 @media(max-width:600px){.two{grid-template-columns:1fr;gap:1.8rem}}
 </style></head><body><a href="index.html" style="position:fixed;top:1rem;left:1rem;z-index:99;font:600 .7rem/1 sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.5rem .8rem;border-radius:999px;background:rgba(42,36,27,.85);color:#fff">← Entwürfe</a>
 <header class="hero"><div class="bar"></div><div class="lab">Wir heiraten</div><div class="nm">Julia & Oliver</div><div class="big">20.08.27</div><p class="mt"><b>Wir sagen Ja.</b> Auf Schloss Herten — und wir freuen uns auf euch.</p></header>
-<section class="sec"><div class="sh">Tagesablauf</div>
-<div class="row"><div class="rt">13:00</div><div class="re">Empfang & Sektpfiff</div></div><div class="row"><div class="rt">14:00</div><div class="re">Trauzeremonie</div></div><div class="row"><div class="rt">15:00</div><div class="re">Fotoshooting</div></div><div class="row"><div class="rt">16:30</div><div class="re">Kaffee & Kuchen</div></div><div class="row"><div class="rt">19:00</div><div class="re">Dinner</div></div><div class="row"><div class="rt">21:00</div><div class="re">Hochzeitstanz & Party</div></div></section>
+<section class="sec"><div class="sh">Tagesablauf</div><div class="row"><div class="rt">13:00</div><div class="re">Empfang & Sektpfiff</div></div><div class="row"><div class="rt">14:00</div><div class="re">Trauzeremonie</div></div><div class="row"><div class="rt">15:00</div><div class="re">Fotoshooting</div></div><div class="row"><div class="rt">16:30</div><div class="re">Kaffee & Kuchen</div></div><div class="row"><div class="rt">19:00</div><div class="re">Dinner</div></div><div class="row"><div class="rt">21:00</div><div class="re">Hochzeitstanz & Party</div></div></section>
 <section class="sec"><div class="sh">Dresscode</div><div class="two"><div><h4>Damen</h4><p>Elegantes Kleid oder Kostüm in festlicher Ausführung.</p></div><div><h4>Herren</h4><p>Eleganter Anzug oder Smoking, Krawatte oder Fliege.</p></div></div><p class="note"><span class="dots"><span style="background:#F5D5D8"></span><span style="background:#E7DDF0"></span><span style="background:#D5E8D8"></span><span style="background:#D8E8F5"></span></span>Pastelltöne willkommen. <b>Kein Rot, kein Weiß/Creme.</b></p></section>
 <section class="sec venue"><div class="sh">Anfahrt</div><p>Schloss Herten<br>Schlossplatz 1, 45699 Herten</p><a class="lnk" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten+45699+Herten" target="_blank" rel="noopener">In Karte öffnen →</a></section>
 <footer>Julia & Oliver · 20. August 2027 · Schloss Herten</footer></body></html>
