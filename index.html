@@ -4,211 +4,112 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<meta name="theme-color" content="#FBF8F1">
+<meta name="theme-color" content="#F2CE4B">
 <title>Julia & Oliver — 20. August 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..560,0..100&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..560,0..100;1,9..144,300..500,0..100&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme:light;
+  --butter:#F2CE4B;
+  --butter-soft:#F8E49A;
+  --butter-deep:#D9A82A;
   --paper:#FBF8F1;
   --paper-2:#F4EDDF;
-  --ink:#26221E;
-  --ink-soft:#736A5D;
+  --ink:#2A241B;
+  --ink-soft:#6E6453;
   --gold:#C8941E;
-  --gold-soft:#F1DFA8;
-  --stone:#A89B86;
-  --line:rgba(38,34,30,.13);
-  --shadow:0 24px 60px -28px rgba(38,34,30,.45);
+  --line:rgba(42,36,27,.14);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:'Karla',system-ui,sans-serif;
-  background:var(--paper);
-  color:var(--ink);
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
+body{font-family:'Karla',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .serif{font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 60,'opsz' 80;font-weight:360}
-.eyebrow{
-  font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;
-  font-weight:600;color:var(--ink-soft);
-}
+.eyebrow{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;font-weight:600;color:var(--ink-soft)}
 img{display:block;max-width:100%}
 a{color:inherit}
 
-/* ---------- NAV ---------- */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1rem clamp(1.25rem,5vw,3rem);
-  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
-}
-.nav.scrolled{
-  background:rgba(251,248,241,.86);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  box-shadow:0 1px 0 var(--line);
-  padding-top:.7rem;padding-bottom:.7rem;
-}
-.nav .mark{
-  font-family:'Fraunces',serif;font-size:1.25rem;font-weight:400;
-  letter-spacing:.02em;color:#fff;transition:color .35s ease;
-}
-.nav.scrolled .mark{color:var(--ink)}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,5vw,3rem);transition:background .35s,box-shadow .35s,padding .35s}
+.nav.scrolled{background:rgba(251,248,241,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding-top:.7rem;padding-bottom:.7rem}
+.nav .mark{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:400;color:var(--ink)}
 .nav .links{display:flex;gap:clamp(.9rem,3vw,2rem);align-items:center}
-.nav .links a{
-  font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
-  font-weight:600;color:rgba(255,255,255,.92);text-decoration:none;
-  position:relative;padding:.2rem 0;transition:color .35s ease;
-}
-.nav.scrolled .links a{color:var(--ink-soft)}
-.nav .links a::after{
-  content:"";position:absolute;left:0;bottom:-2px;height:1.5px;width:0;
-  background:var(--gold);transition:width .3s ease;
-}
+.nav .links a{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);text-decoration:none;position:relative;padding:.2rem 0;transition:color .3s}
+.nav .links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1.5px;width:0;background:var(--butter-deep);transition:width .3s}
+.nav .links a:hover{color:var(--butter-deep)}
 .nav .links a:hover::after{width:100%}
-.nav .links a:hover{color:var(--gold)}
 
-/* ---------- HERO ---------- */
-.hero{
-  position:relative;min-height:100svh;
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  padding:6rem 1.5rem 4rem;overflow:hidden;background:var(--ink);
-}
-.hero__img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  filter:saturate(.9) brightness(.82);
-}
-.hero__scrim{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(180deg,rgba(20,17,14,.55) 0%,rgba(20,17,14,.12) 32%,rgba(20,17,14,.2) 60%,rgba(20,17,14,.78) 100%);
-}
-.hero__frame{
-  position:absolute;inset:clamp(.9rem,2.5vw,1.6rem);
-  border:1px solid rgba(241,223,168,.45);border-radius:2px;pointer-events:none;
-}
-.hero__inner{position:relative;z-index:2;color:#fff;max-width:780px}
-.hero__inner .eyebrow{color:rgba(255,255,255,.82);margin-bottom:1.6rem}
-.hero h1{
-  font-family:'Fraunces',serif;font-variation-settings:'SOFT' 60,'opsz' 144;
-  font-weight:340;line-height:.98;letter-spacing:-.01em;
-  font-size:clamp(3.2rem,13vw,7.5rem);
-  text-shadow:0 2px 30px rgba(0,0,0,.25);
-}
-.hero h1 .amp{font-style:italic;font-weight:300;color:var(--gold-soft);display:inline-block;padding:0 .12em}
-.hero__date{
-  margin-top:1.8rem;font-size:.95rem;letter-spacing:.16em;text-transform:uppercase;
-  font-weight:500;color:rgba(255,255,255,.92);
-}
-.hero__date span{color:var(--gold-soft)}
-.scrollcue{
-  position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);z-index:2;
-  width:1px;height:46px;background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.7));
-}
+/* HERO — Butter Yellow */
+.hero{position:relative;min-height:100svh;background:var(--butter);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6.5rem 1.5rem 4rem;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:clamp(.9rem,2.5vw,1.6rem);border:1px solid rgba(42,36,27,.28);border-radius:3px;pointer-events:none}
+.hero__inner{position:relative;z-index:2;max-width:760px;display:flex;flex-direction:column;align-items:center}
+.hero__inner .eyebrow{margin-bottom:1.4rem;color:rgba(42,36,27,.7)}
+.hero h1{font-family:'Fraunces',serif;font-variation-settings:'SOFT' 60,'opsz' 144;font-weight:340;line-height:.98;letter-spacing:-.01em;font-size:clamp(3rem,12vw,6.6rem);color:var(--ink)}
+.hero h1 .amp{font-style:italic;font-weight:300;padding:0 .1em}
+.hero__motto{font-family:'Fraunces',serif;font-style:italic;font-weight:340;font-size:clamp(1.1rem,3.6vw,1.6rem);color:var(--ink);opacity:.78;margin-top:1rem;letter-spacing:.01em}
+.hero__photo{position:relative;width:clamp(220px,62vw,340px);aspect-ratio:4/5;margin:2.4rem auto 0;border-radius:170px 170px 10px 10px;overflow:hidden;border:1px solid rgba(42,36,27,.35);box-shadow:0 30px 60px -32px rgba(42,36,27,.6);background:var(--butter-soft)}
+.hero__photo img,.hero__photo svg{position:absolute;inset:0;width:100%;height:100%}
+.hero__photo img{object-fit:cover}
+.hero__photo svg{display:none;padding:14% 12% 0}
+.hero__date{margin-top:1.8rem;font-size:.9rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--ink);opacity:.85}
 
-/* ---------- COUNTDOWN ---------- */
-.count{
-  background:var(--paper);padding:clamp(2.5rem,7vw,4rem) 1.5rem;
-  border-bottom:1px solid var(--line);
-}
-.count__grid{
-  max-width:620px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.5rem,3vw,1.5rem);
-  text-align:center;
-}
-.count__num{
-  font-family:'Fraunces',serif;font-weight:360;line-height:1;
-  font-size:clamp(2rem,9vw,3.4rem);font-variant-numeric:tabular-nums;
-}
-.count__lbl{
-  margin-top:.5rem;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--ink-soft);font-weight:600;
-}
-.count__sep{display:none}
+/* COUNTDOWN */
+.count{background:var(--paper);padding:clamp(2.5rem,7vw,4rem) 1.5rem;border-bottom:1px solid var(--line)}
+.count__grid{max-width:620px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.4rem,3vw,1.5rem);text-align:center}
+.count__num{font-family:'Fraunces',serif;font-weight:360;line-height:1;font-size:clamp(1.9rem,9vw,3.4rem);font-variant-numeric:tabular-nums;color:var(--ink)}
+.count__lbl{margin-top:.5rem;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
 
-/* ---------- SECTION SCAFFOLD ---------- */
+/* SECTIONS */
 .section{padding:clamp(3.5rem,9vw,6.5rem) 1.5rem}
 .section__head{text-align:center;max-width:680px;margin:0 auto clamp(2.5rem,6vw,4rem)}
 .section__head .eyebrow{display:block;margin-bottom:1rem}
-.section__head h2{
-  font-family:'Fraunces',serif;font-variation-settings:'SOFT' 60,'opsz' 100;
-  font-weight:360;font-size:clamp(2rem,6vw,3rem);line-height:1.05;
-}
+.section__head h2{font-family:'Fraunces',serif;font-variation-settings:'SOFT' 60,'opsz' 100;font-weight:360;font-size:clamp(2rem,6vw,3rem);line-height:1.05}
 .arch{display:block;margin:0 auto 2.2rem;width:54px;height:27px}
-.arch path{fill:none;stroke:var(--gold);stroke-width:1.4}
+.arch path{fill:none;stroke:var(--butter-deep);stroke-width:1.4}
 .alt{background:var(--paper-2)}
 
-/* ---------- TIMELINE ---------- */
+/* TIMELINE */
 .timeline{max-width:540px;margin:0 auto;position:relative;padding-left:2rem}
-.timeline::before{
-  content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line);
-}
+.timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line)}
 .tl-item{position:relative;padding:0 0 2.2rem 1.6rem}
 .tl-item:last-child{padding-bottom:0}
-.tl-item::before{
-  content:"";position:absolute;left:-2rem;top:.45rem;
-  width:11px;height:11px;border-radius:50%;background:var(--paper);
-  border:1.5px solid var(--gold);transform:translateX(0);
-}
+.tl-item::before{content:"";position:absolute;left:-2rem;top:.45rem;width:11px;height:11px;border-radius:50%;background:var(--paper);border:1.5px solid var(--butter-deep)}
 .tl-time{font-family:'Fraunces',serif;font-weight:420;font-size:1.15rem;color:var(--ink)}
 .tl-event{font-size:.98rem;color:var(--ink-soft);margin-top:.1rem}
 
-/* ---------- DRESSCODE ---------- */
+/* DRESSCODE */
 .dress{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1px 1fr;gap:0}
 .dress__col{padding:0 clamp(1rem,4vw,2.4rem)}
 .dress__rule{background:var(--line)}
 .dress h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.25rem;margin-bottom:.7rem}
 .dress p{font-size:.98rem;color:var(--ink-soft)}
-.palette{
-  max-width:760px;margin:clamp(2.2rem,5vw,3rem) auto 0;text-align:center;
-  border-top:1px solid var(--line);padding-top:2rem;
-}
+.palette{max-width:760px;margin:clamp(2.2rem,5vw,3rem) auto 0;text-align:center;border-top:1px solid var(--line);padding-top:2rem}
 .palette__dots{display:flex;gap:.6rem;justify-content:center;margin-bottom:.9rem}
 .palette__dots span{width:16px;height:16px;border-radius:50%;border:1px solid rgba(0,0,0,.06)}
-.palette__note{font-size:.85rem;color:var(--ink-soft);letter-spacing:.02em}
+.palette__note{font-size:.85rem;color:var(--ink-soft)}
 .palette__note b{color:var(--ink);font-weight:600}
 
-/* ---------- ANFAHRT ---------- */
+/* ANFAHRT */
 .venue{max-width:520px;margin:0 auto;text-align:center}
 .venue h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.6rem;margin-bottom:.6rem}
 .venue p{color:var(--ink-soft);font-size:1rem}
-.btn{
-  display:inline-block;margin-top:1.8rem;padding:.85rem 2rem;
-  font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
-  color:var(--ink);text-decoration:none;border:1px solid var(--ink);
-  border-radius:999px;transition:background .25s ease,color .25s ease,border-color .25s ease;
-}
-.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn{display:inline-block;margin-top:1.8rem;padding:.85rem 2rem;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:999px;transition:background .25s,border-color .25s,color .25s}
+.btn:hover{background:var(--butter);border-color:var(--butter-deep)}
 
-/* ---------- FOOTER ---------- */
-footer{
-  text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--line);
-  background:var(--paper);
-}
+/* FOOTER */
+footer{text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--line);background:var(--paper)}
 footer .fmark{font-family:'Fraunces',serif;font-size:1.4rem;margin-bottom:.5rem}
 footer p{font-size:.82rem;color:var(--ink-soft);letter-spacing:.05em}
 footer .credit{margin-top:1.2rem;font-size:.68rem;opacity:.7}
 footer .credit a{color:var(--ink-soft);text-decoration:underline}
 
-/* ---------- REVEAL ---------- */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
 .reveal.in{opacity:1;transform:none}
 
-/* ---------- MOBILE ---------- */
-@media(max-width:600px){
-  .count__grid{grid-template-columns:repeat(4,1fr);gap:.4rem}
-  .dress{grid-template-columns:1fr;gap:2.2rem}
-  .dress__rule{display:none}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
-  html{scroll-behavior:auto}
-}
+@media(max-width:600px){.dress{grid-template-columns:1fr;gap:2.2rem}.dress__rule{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -223,17 +124,32 @@ footer .credit a{color:var(--ink-soft);text-decoration:underline}
 </nav>
 
 <header class="hero" id="top">
-  <img class="hero__img" id="heroImg"
-       src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Herten_-_Schlosspark_-_Schloss_22_ies.jpg/1600px-Herten_-_Schlosspark_-_Schloss_22_ies.jpg"
-       alt="Schloss Herten">
-  <div class="hero__scrim"></div>
-  <div class="hero__frame"></div>
   <div class="hero__inner">
     <span class="eyebrow">Wir heiraten</span>
     <h1 class="serif">Julia<span class="amp">&amp;</span>Oliver</h1>
-    <div class="hero__date">20. August 2027 <span>·</span> Schloss Herten</div>
+    <p class="hero__motto">Wir sagen Ja.</p>
+    <div class="hero__photo">
+      <img id="heroImg"
+           src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Herten_-_Schlosspark_-_Schloss_22_ies.jpg/1280px-Herten_-_Schlosspark_-_Schloss_22_ies.jpg"
+           alt="Schloss Herten">
+      <svg id="heroArt" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2A241B" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M20 230 H180"/>
+        <path d="M30 230 V120 H60 V230"/>
+        <path d="M140 230 V120 H170 V230"/>
+        <path d="M30 120 L45 95 L60 120"/>
+        <path d="M140 120 L155 95 L170 120"/>
+        <path d="M60 230 V90 H140 V230"/>
+        <path d="M60 90 L100 55 L140 90"/>
+        <path d="M95 230 V175 A5 5 0 0 1 105 175 V230"/>
+        <circle cx="100" cy="120" r="9"/>
+        <rect x="72" y="150" width="14" height="20" rx="7"/>
+        <rect x="114" y="150" width="14" height="20" rx="7"/>
+        <path d="M37 150 h16 M147 150 h16" stroke-width="1.5"/>
+        <path d="M14 236 q12 -6 24 0 t24 0 t24 0 t24 0 t24 0 t24 0" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="hero__date">20. August 2027 · Schloss Herten</div>
   </div>
-  <div class="scrollcue"></div>
 </header>
 
 <section class="count" aria-label="Countdown">
@@ -268,15 +184,9 @@ footer .credit a{color:var(--ink-soft);text-decoration:underline}
     <h2>Dresscode</h2>
   </div>
   <div class="dress reveal">
-    <div class="dress__col">
-      <h3>Damen</h3>
-      <p>Elegantes Kleid oder Kostüm in festlicher Ausführung.</p>
-    </div>
+    <div class="dress__col"><h3>Damen</h3><p>Elegantes Kleid oder Kostüm in festlicher Ausführung.</p></div>
     <div class="dress__rule"></div>
-    <div class="dress__col">
-      <h3>Herren</h3>
-      <p>Eleganter Anzug oder Smoking mit Krawatte oder Fliege.</p>
-    </div>
+    <div class="dress__col"><h3>Herren</h3><p>Eleganter Anzug oder Smoking mit Krawatte oder Fliege.</p></div>
   </div>
   <div class="palette reveal">
     <div class="palette__dots">
@@ -284,7 +194,7 @@ footer .credit a{color:var(--ink-soft);text-decoration:underline}
       <span style="background:#E7DDF0"></span>
       <span style="background:#D5E8D8"></span>
       <span style="background:#D8E8F5"></span>
-      <span style="background:#F1DFA8"></span>
+      <span style="background:#F8E49A"></span>
     </div>
     <p class="palette__note">Pastelltöne sind willkommen. <b>Bitte kein Rot und kein Weiß/Creme.</b></p>
   </div>
@@ -310,27 +220,18 @@ footer .credit a{color:var(--ink-soft);text-decoration:underline}
 </footer>
 
 <script>
-// Nav scroll state
 var nav=document.getElementById('nav');
 function onScroll(){nav.classList.toggle('scrolled',window.scrollY>40);}
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-// Countdown -> Trauzeremonie 20.08.2027 13:00
 var target=new Date('2027-08-20T13:00:00').getTime();
 function pad(n){return n<10?'0'+n:''+n;}
 function tick(){
   var diff=target-Date.now();
-  if(diff<=0){
-    document.getElementById('cd-d').textContent='0';
-    document.getElementById('cd-h').textContent='00';
-    document.getElementById('cd-m').textContent='00';
-    document.getElementById('cd-s').textContent='00';
-    return;
-  }
-  var d=Math.floor(diff/86400000);
-  var h=Math.floor(diff%86400000/3600000);
-  var m=Math.floor(diff%3600000/60000);
-  var s=Math.floor(diff%60000/1000);
+  var d=Math.max(0,Math.floor(diff/86400000));
+  var h=Math.max(0,Math.floor(diff%86400000/3600000));
+  var m=Math.max(0,Math.floor(diff%3600000/60000));
+  var s=Math.max(0,Math.floor(diff%60000/1000));
   document.getElementById('cd-d').textContent=d;
   document.getElementById('cd-h').textContent=pad(h);
   document.getElementById('cd-m').textContent=pad(m);
@@ -338,28 +239,14 @@ function tick(){
 }
 tick();setInterval(tick,1000);
 
-// Reveal on scroll
 if('IntersectionObserver' in window){
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-  },{threshold:.15});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-}else{
-  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
-}
+}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
 
-// Image fallback chain
-var hero=document.getElementById('heroImg');
-var fallbacks=[
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Schloss_Herten_2017.JPG/1600px-Schloss_Herten_2017.JPG'
-];
-hero.addEventListener('error',function(){
-  if(fallbacks.length){hero.src=fallbacks.shift();}
-  else{
-    hero.style.display='none';
-    document.querySelector('.hero').style.background='linear-gradient(160deg,#3a342c,#26221e)';
-  }
-});
+// Bild-Fallback: Wikimedia -> Inline-SVG-Schloss (nie leer)
+var hero=document.getElementById('heroImg'),art=document.getElementById('heroArt');
+hero.addEventListener('error',function(){hero.style.display='none';art.style.display='block';});
 </script>
 </body>
 </html>
