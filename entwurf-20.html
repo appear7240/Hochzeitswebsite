@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light only">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..800;1,400..700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<title>Julia & Oliver — Entwurf 20 Editorial Ribbon</title>
+<style>
+:root{--butter:#F7E79B;--butter2:#FFF4B9;--gold:#C89F2D;--ink:#181713;--muted:#756D5F;--cream:#FFFCF5;--line:rgba(24,23,19,.12)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#fffdf7,#fbf4df);color:var(--ink);line-height:1.55;overflow-x:hidden}
+.backlink{position:fixed;z-index:99;top:18px;left:18px;text-decoration:none;background:#191713;color:#fff;border-radius:999px;padding:.65rem .9rem;font:700 .72rem/1 Inter;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 15px 35px rgba(0,0,0,.18)}
+header{min-height:100svh;display:grid;grid-template-rows:auto 1fr;border-bottom:1px solid var(--line);background:
+radial-gradient(circle at 84% 26%,rgba(247,231,155,.95),transparent 33%),
+linear-gradient(90deg,#fffdf8 0 52%,#fff6c8 52%)}
+.topbar{height:92px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,4vw,4rem);border-bottom:1px solid var(--line);background:rgba(255,255,255,.42);backdrop-filter:blur(18px)}
+.logo{font-family:Playfair Display,serif;font-size:1.35rem;letter-spacing:.08em;text-decoration:none;color:var(--ink)}.site-nav{display:flex;gap:clamp(1rem,3vw,2.5rem)}.site-nav a{text-decoration:none;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700}.rsvp-pill{border:1px solid var(--line);background:var(--butter);padding:.75rem 1.2rem;border-radius:999px;text-decoration:none;color:var(--ink);font-weight:800;font-size:.78rem;letter-spacing:.12em}
+.hero{display:grid;grid-template-columns:minmax(0,1.07fr) minmax(320px,.93fr);align-items:center;gap:2rem;padding:clamp(3rem,6vw,6rem) clamp(1.4rem,5vw,5rem);position:relative;isolation:isolate}
+.hero:before{content:"";position:absolute;right:-8vw;top:6vh;width:46vw;height:46vw;border-radius:50%;background:radial-gradient(circle,#fff9d7,#f3d86e 45%,transparent 66%);filter:blur(10px);opacity:.72;z-index:-1}
+.kicker{font-size:.75rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);font-weight:800}h1{font-family:Playfair Display,serif;font-weight:500;font-size:clamp(4rem,12vw,10.8rem);line-height:.82;letter-spacing:-.07em;margin:1.2rem 0}
+h1 em{font-family:Cormorant Garamond,serif;font-style:italic;color:var(--gold);font-size:.55em;letter-spacing:-.03em;vertical-align:middle}.subtitle{font-family:Cormorant Garamond,serif;font-size:clamp(1.7rem,3.5vw,3rem);font-style:italic;color:#a57e1e;margin-bottom:1rem}
+.meta{letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--muted);font-size:.88rem}.cta-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}.button{display:inline-flex;align-items:center;gap:.8rem;padding:1rem 1.45rem;border-radius:999px;background:#191713;color:white;text-decoration:none;font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.14em}.button.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.visual{position:relative;min-height:620px}.card-photo{position:absolute;inset:8% 7% auto 4%;height:62%;border-radius:28px;overflow:hidden;box-shadow:0 35px 80px -45px rgba(0,0,0,.55);background:linear-gradient(135deg,#fff7cf,#e4c55c);border:1px solid rgba(255,255,255,.7)}
+.card-photo:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.62),transparent 38%),url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Herten_-_Schlosspark_-_Schloss_22_ies.jpg/1280px-Herten_-_Schlosspark_-_Schloss_22_ies.jpg') center/cover;mix-blend-mode:multiply;opacity:.9}
+.ribbon{position:absolute;right:0;top:3%;width:min(420px,80%);aspect-ratio:1.4;background:
+radial-gradient(ellipse at center,#ffeeb1 0 16%,#d9b43f 17% 20%,transparent 21%),
+conic-gradient(from 220deg at 50% 47%,transparent 0 15%,#ffeaa0 15% 28%,transparent 28% 50%,#f1d55f 50% 64%,transparent 64% 100%);
+filter:drop-shadow(0 24px 28px rgba(112,83,0,.25));opacity:.95;transform:rotate(7deg)}
+.ribbon:before,.ribbon:after{content:"";position:absolute;width:38%;height:76%;background:linear-gradient(135deg,#fff2b0,#dbb13a);top:50%;clip-path:polygon(50% 0,100% 100%,50% 82%,0 100%);filter:blur(.1px)}.ribbon:before{left:32%;transform:rotate(22deg)}.ribbon:after{left:39%;transform:rotate(-16deg)}
+.pearl{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff,#fff8df 34%,#cbb987);box-shadow:0 7px 18px rgba(107,86,20,.18)}.p1{width:22px;height:22px;left:4%;top:62%}.p2{width:12px;height:12px;right:18%;top:64%}.p3{width:34px;height:34px;right:4%;bottom:13%}.p4{width:16px;height:16px;left:34%;bottom:17%}.monogram{position:absolute;right:10%;bottom:4%;width:230px;height:310px;background:linear-gradient(#fff8cf,#f1d56e);border-radius:110px 110px 18px 18px;display:grid;place-items:center;border:1px solid rgba(154,121,33,.25);box-shadow:0 30px 70px -45px rgba(0,0,0,.5)}.monogram span{font-family:Playfair Display,serif;font-size:5rem;color:#b58a1f}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:940px;margin:-42px auto 0;position:relative;z-index:4;background:rgba(255,255,255,.76);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:28px;box-shadow:0 28px 80px -54px #47370d;overflow:hidden}.countdown div{padding:1.4rem;text-align:center;border-right:1px solid var(--line)}.countdown div:last-child{border-right:0}.countdown strong{font-family:Playfair Display,serif;font-weight:500;font-size:clamp(2rem,6vw,4rem)}.countdown span{display:block;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.section{padding:clamp(4rem,7vw,7rem) clamp(1.3rem,5vw,5rem)}.section h2{font-family:Playfair Display,serif;font-size:clamp(2.2rem,6vw,5rem);font-weight:500;letter-spacing:-.05em}.grid4{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:32px;overflow:hidden;background:#fffdf7;margin-top:2rem}.grid4 article{padding:2rem;border-right:1px solid var(--line);min-height:220px}.grid4 article:last-child{border-right:0}.grid4 h3{font-family:Playfair Display,serif;font-size:1.45rem;margin-bottom:.7rem}.grid4 p{color:var(--muted)}.icon{font-size:2rem;color:var(--gold);margin-bottom:1.2rem}.split{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}.venue-card{border-radius:36px;background:linear-gradient(135deg,#fff,#fff2bb);border:1px solid var(--line);padding:clamp(2rem,5vw,4rem);position:relative;overflow:hidden}.venue-card:after{content:"";position:absolute;right:-50px;bottom:-80px;width:260px;height:260px;border:1px solid rgba(200,159,45,.32);border-radius:50%}.schedule{display:grid;gap:.9rem;margin-top:2rem}.schedule li{list-style:none;display:grid;grid-template-columns:80px 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}.schedule b{font-family:Playfair Display,serif;font-size:1.25rem}.footer{text-align:center;padding:3rem 1rem;color:var(--muted);border-top:1px solid var(--line)}.reveal{opacity:0;transform:translateY(24px);transition:800ms ease}.reveal.is-visible{opacity:1;transform:none}
+@media(max-width:850px){.site-nav{display:none}.hero{grid-template-columns:1fr}.visual{min-height:430px}.countdown,.grid4{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.topbar{padding-left:5rem}}
+</style></head><body><a class="backlink" href="index.html" aria-label="Zur Entwurfsübersicht">← Entwürfe</a>
+<header><div class="topbar"><a class="logo" href="#">JULIA & OLIVER</a>
+<nav class="site-nav">
+  <a href="#story">Story</a><a href="#ablauf">Ablauf</a><a href="#dresscode">Dresscode</a><a href="#anfahrt">Anfahrt</a><a href="#rsvp">RSVP</a>
+</nav>
+<a class="rsvp-pill" href="#rsvp">RSVP</a></div>
+<section class="hero"><div class="copy reveal"><span class="kicker">20. August 2027 · Schloss Herten</span><h1>Julia <em>&</em><br>Oliver</h1><p class="subtitle">Wir sagen Ja.</p><p class="meta">Butter Yellow · Schleifen · Perlen</p><div class="cta-row"><a class="button" href="#rsvp">Zusagen →</a><a class="button alt" href="#ablauf">Ablauf ansehen</a></div></div><div class="visual reveal"><div class="ribbon"></div><div class="card-photo"></div><div class="monogram"><span>J<br>O</span></div><i class="pearl p1"></i><i class="pearl p2"></i><i class="pearl p3"></i><i class="pearl p4"></i></div></section></header>
+
+    <div class="countdown " aria-label="Countdown bis zur Hochzeit">
+      <div><strong data-count="days">—</strong><span>Tage</span></div>
+      <div><strong data-count="hours">—</strong><span>Stunden</span></div>
+      <div><strong data-count="mins">—</strong><span>Minuten</span></div>
+      <div><strong data-count="secs">—</strong><span>Sekunden</span></div>
+    </div>
+<section id="ablauf" class="section"><div class="split"><div class="reveal"><span class="kicker">Unser Tag</span><h2>Tagesablauf</h2><ul class="schedule"><li><b>14:00</b><span>Trauung · Schlosskapelle</span></li><li><b>15:00</b><span>Sektempfang · Schlosshof</span></li><li><b>17:00</b><span>Fotos · Schlosspark</span></li><li><b>18:30</b><span>Dinner · Festsaal</span></li><li><b>21:30</b><span>Party · Open End</span></li></ul></div><div class="venue-card reveal"><span class="kicker">Details</span><h2>Modern, edel, hell.</h2><p>Ein reduzierter Editorial-Look mit großem Namen, zarter Butter-Yellow-Fläche, Satin-Schleife und einzelnen Perlen als luxuriöse Akzente.</p></div></div></section>
+<section id="dresscode" class="section"><div class="grid4 reveal"><article><div class="icon">⊂⊃</div><h3>Dresscode</h3><p>Festlich, hell und elegant. Buttergelb, Creme, Champagner und warme Pastelle.</p></article><article><div class="icon">◎</div><h3>Perlen</h3><p>Kleine Pearl-Dots als UI-Details, Trennzeichen und Hover-Akzente.</p></article><article><div class="icon">⌁</div><h3>Schleifen</h3><p>Satinband als Hero-Statement und dezentes Symbol für die Navigation.</p></article><article id="rsvp"><div class="icon">✉</div><h3>RSVP</h3><p>Bitte gebt uns bis zum 01. Mai 2027 Bescheid.</p></article></div></section>
+<section id="anfahrt" class="section"><div class="venue-card reveal"><span class="kicker">Anfahrt</span><h2>Schloss Herten</h2><p>Schlossstraße 1 · 45699 Herten</p><a class="button" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten" target="_blank" rel="noopener">Route planen →</a></div></section>
+<footer class="footer">Julia & Oliver · 20. August 2027 · Schloss Herten</footer>
+<script>
+const WEDDING_DATE = new Date("2027-08-20T14:00:00+02:00").getTime();
+const $ = (q,ctx=document)=>ctx.querySelector(q);
+const $$ = (q,ctx=document)=>Array.from(ctx.querySelectorAll(q));
+function pad(n){ return String(n).padStart(2,"0"); }
+function tick(){
+  const diff = Math.max(0, WEDDING_DATE - Date.now());
+  const vals = {
+    days: Math.floor(diff/86400000),
+    hours: Math.floor(diff%86400000/3600000),
+    mins: Math.floor(diff%3600000/60000),
+    secs: Math.floor(diff%60000/1000)
+  };
+  $$("[data-count]").forEach(el=>{
+    const key = el.dataset.count;
+    el.textContent = key==="days" ? vals[key] : pad(vals[key]);
+  });
+}
+tick(); setInterval(tick, 1000);
+
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add("is-visible"); io.unobserve(entry.target); }
+    })
+  }, {threshold:.12});
+  $$(".reveal").forEach(el=>io.observe(el));
+} else {
+  $$(".reveal").forEach(el=>el.classList.add("is-visible"));
+}
+</script>
+</body></html>
