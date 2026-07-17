@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 76 — Tanzkarte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Mulish:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--butter:#F6E7A2;--gold:#C99A28;--cream:#FBF7EA;--ink:#2B251C;--muted:#746A58;--line:rgba(43,37,28,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Mulish,Arial,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.back{position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid var(--line);border-radius:999px;background:rgba(251,247,234,.86);backdrop-filter:blur(14px);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800;transition:.25s}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:4px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.3em;font-weight:800;color:var(--gold)}
+.serif{font-family:"Cormorant Garamond",serif}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:6rem 1.5rem;background:radial-gradient(ellipse at 50% 0%,#fdf3c2,var(--cream) 62%)}
+.hero h1{font-size:clamp(3.2rem,11vw,7.6rem);font-weight:400;line-height:.98}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .sub{margin-top:1.4rem;letter-spacing:.3em;text-transform:uppercase;font-size:.8rem;color:var(--muted)}
+.steps{position:absolute;inset:0;pointer-events:none}
+.step{position:absolute;width:34px;opacity:0;animation:stepIn 6s ease infinite}
+.step svg{width:100%;fill:none;stroke:var(--gold);stroke-width:2.4}
+@keyframes stepIn{0%,100%{opacity:0;transform:translateY(8px)}12%,60%{opacity:.75;transform:none}72%{opacity:0}}
+.takt{display:inline-flex;gap:.6rem;margin-top:2.4rem;font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-style:italic;color:var(--muted)}
+.takt b{color:var(--gold);font-weight:500;animation:beat 1.8s ease infinite}
+.takt b:nth-child(2){animation-delay:.6s}
+.takt b:nth-child(3){animation-delay:1.2s}
+@keyframes beat{0%,100%{transform:none}12%{transform:translateY(-8px) scale(1.15)}}
+.dancecard{max-width:640px;margin:0 auto;padding:7rem 1.5rem;text-align:center}
+.card{border:1px solid var(--gold);border-radius:20px 20px 120px 120px;background:#fffdf6;padding:clamp(2.4rem,7vw,4rem) clamp(1.3rem,5vw,3rem);box-shadow:0 34px 80px -54px rgba(94,81,31,.6)}
+.card h2{font-size:clamp(2rem,6vw,3.2rem);font-weight:400}
+.dance{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:baseline;padding:1.15rem .2rem;border-bottom:1px dotted var(--gold);text-align:left}
+.dance:last-of-type{border-bottom:0}
+.dance .no{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.3rem;color:var(--gold)}
+.dance h3{font-weight:800;font-size:1.02rem;letter-spacing:.02em}
+.dance p{color:var(--muted);font-size:.88rem;margin-top:.15rem}
+.dance .with{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--muted)}
+.card .hint{margin-top:1.8rem;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.footer{padding:4.5rem 1.4rem;text-align:center;background:var(--ink);color:#fdf6da}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2rem,6vw,3.6rem)}
+.footer p{margin:.7rem 0 1.4rem;color:rgba(255,255,255,.7)}
+.cta{display:inline-flex;padding:.95rem 1.35rem;border-radius:999px;background:var(--butter);color:var(--ink);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+ .step{opacity:.5;animation:none}
+}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero">
+ <div class="steps" aria-hidden="true">
+  <span class="step" style="left:12%;top:22%"><svg viewBox="0 0 24 40"><path d="M12 2c5 0 8 6 8 13 0 9-4 13-4 20 0 2-2 3-4 3s-4-1-4-3c0-7-4-11-4-20C4 8 7 2 12 2z"/></svg></span>
+  <span class="step" style="left:19%;top:36%;animation-delay:1s;transform:rotate(24deg)"><svg viewBox="0 0 24 40"><path d="M12 2c5 0 8 6 8 13 0 9-4 13-4 20 0 2-2 3-4 3s-4-1-4-3c0-7-4-11-4-20C4 8 7 2 12 2z"/></svg></span>
+  <span class="step" style="right:16%;top:26%;animation-delay:2s;transform:rotate(-18deg)"><svg viewBox="0 0 24 40"><path d="M12 2c5 0 8 6 8 13 0 9-4 13-4 20 0 2-2 3-4 3s-4-1-4-3c0-7-4-11-4-20C4 8 7 2 12 2z"/></svg></span>
+  <span class="step" style="right:10%;top:44%;animation-delay:3s;transform:rotate(10deg)"><svg viewBox="0 0 24 40"><path d="M12 2c5 0 8 6 8 13 0 9-4 13-4 20 0 2-2 3-4 3s-4-1-4-3c0-7-4-11-4-20C4 8 7 2 12 2z"/></svg></span>
+  <span class="step" style="left:44%;bottom:12%;animation-delay:4s;transform:rotate(-8deg)"><svg viewBox="0 0 24 40"><path d="M12 2c5 0 8 6 8 13 0 9-4 13-4 20 0 2-2 3-4 3s-4-1-4-3c0-7-4-11-4-20C4 8 7 2 12 2z"/></svg></span>
+ </div>
+ <div>
+  <span class="eyebrow">Der Ball des Jahres</span>
+  <h1 class="serif">Julia <em>&amp;</em> Oliver<br>bitten zum Tanz</h1>
+  <p class="sub">20 · 08 · 2027 · Schloss Herten</p>
+  <div class="takt" aria-hidden="true"><b>eins</b> · <b>zwei</b> · <b>drei</b></div>
+ </div>
+</header>
+
+<section class="dancecard">
+ <div class="card reveal">
+  <span class="eyebrow">Tanzkarte</span>
+  <h2 class="serif" style="margin:.5rem 0 1.6rem">Programm des Abends</h2>
+  <div class="dance"><span class="no">I.</span><div><h3>Prozession</h3><p>Freie Trauung im Schlosspark</p></div><span class="with">15:00</span></div>
+  <div class="dance"><span class="no">II.</span><div><h3>Promenade</h3><p>Champagner &amp; Fotos auf der Terrasse</p></div><span class="with">17:00</span></div>
+  <div class="dance"><span class="no">III.</span><div><h3>Tafelmusik</h3><p>Dinner im Schlosssaal</p></div><span class="with">19:00</span></div>
+  <div class="dance"><span class="no">IV.</span><div><h3>Eröffnungswalzer</h3><p>Das Brautpaar bittet – danach seid ihr dran</p></div><span class="with">21:30</span></div>
+  <div class="dance"><span class="no">V.</span><div><h3>Freier Tanz</h3><p>Bis die Kapelle nach Hause will</p></div><span class="with">open end</span></div>
+  <p class="hint">Reservierungen auf dieser Karte sind unverbindlich, Vorfreude nicht.</p>
+ </div>
+</section>
+
+<footer class="footer"><h2>Darf ich bitten?</h2><p>Julia &amp; Oliver · Schloss Herten</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Route öffnen</a></footer>
+
+<script>
+const progress=document.querySelector('.progress');
+addEventListener('scroll',()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.transform=`scaleX(${max>0?scrollY/max:0})`;
+},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>

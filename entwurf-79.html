@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 79 — Schreibmaschine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--butter:#F6E7A2;--gold:#C99A28;--paper:#F7F2E2;--ink:#33302A;--muted:#75705F;--line:rgba(51,48,42,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Work Sans",Arial,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.back{position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid var(--line);border-radius:999px;background:rgba(247,242,226,.88);backdrop-filter:blur(14px);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;transition:.25s}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:4px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.3em;font-weight:600;color:var(--gold)}
+.mono{font-family:"Special Elite","Courier New",monospace}
+.serif{font-family:"Cormorant Garamond",serif}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.hero{min-height:100vh;display:grid;place-items:center;padding:6rem 1.2rem}
+.sheet{width:min(680px,94vw);background:#FDFAF0;border:1px solid var(--line);box-shadow:0 44px 90px -60px rgba(51,48,42,.55);padding:clamp(2.2rem,7vw,4rem);position:relative}
+.sheet:before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:repeating-linear-gradient(90deg,transparent 0 26px,rgba(51,48,42,.08) 26px 30px)}
+.typed{font-size:clamp(1rem,2.9vw,1.3rem);line-height:2.05;white-space:pre-wrap;min-height:16em}
+.cursor{display:inline-block;width:.6em;border-bottom:2px solid var(--ink);animation:blink 1s steps(1) infinite;translate:0 -2px}
+@keyframes blink{50%{opacity:0}}
+.hint{margin-top:1.6rem;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-align:center}
+.info{max-width:820px;margin:0 auto;padding:7rem 1.5rem;text-align:center}
+.info h2{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:400}
+.stamps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.stamp{border:2px dashed var(--gold);border-radius:10px;padding:1.8rem 1.4rem;background:#fdfaf0;rotate:-1deg}
+.stamp:nth-child(2){rotate:1.4deg}.stamp:nth-child(3){rotate:-.6deg}
+.stamp h3{font-family:"Special Elite",monospace;font-size:1.25rem;margin:.4rem 0 .3rem}
+.stamp p{color:var(--muted);font-size:.92rem;line-height:1.7}
+.footer{padding:4.5rem 1.4rem;text-align:center;background:var(--ink);color:#f6efd6}
+.footer h2{font-family:"Special Elite",monospace;font-size:clamp(1.7rem,5vw,2.8rem)}
+.footer p{margin:.7rem 0 1.4rem;color:rgba(246,239,214,.7)}
+.cta{display:inline-flex;padding:.95rem 1.35rem;border-radius:999px;background:var(--butter);color:var(--ink);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+@media(max-width:760px){.stamps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero">
+ <div>
+  <div class="sheet">
+   <p class="typed mono" id="typed" aria-label="Einladungstext"></p><span class="cursor" aria-hidden="true"></span>
+  </div>
+  <p class="hint">— getippt auf einer alten Reiseschreibmaschine —</p>
+ </div>
+</header>
+
+<section class="info">
+ <span class="eyebrow reveal">Zur Sache</span>
+ <h2 class="serif reveal">Die harten Fakten, weich gestempelt.</h2>
+ <div class="stamps">
+  <div class="stamp reveal"><span class="eyebrow">15:00</span><h3>Trauung</h3><p>Freie Zeremonie im Schlosspark von Schloss Herten.</p></div>
+  <div class="stamp reveal"><span class="eyebrow">17:00</span><h3>Empfang</h3><p>Sekt, Sonne und Zeit für alle, die wir lieben.</p></div>
+  <div class="stamp reveal"><span class="eyebrow">19:00</span><h3>Fest</h3><p>Dinner und Tanz bis weit nach Redaktionsschluss.</p></div>
+ </div>
+</section>
+
+<footer class="footer"><h2>Antwort erbeten. Tippfehler verziehen.</h2><p>Julia &amp; Oliver · Schloss Herten</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Route öffnen</a></footer>
+
+<script>
+const text=`Liebe Freunde, liebe Familie,
+
+hiermit geben wir es schwarz auf
+buttergelb: Wir heiraten.
+
+    JULIA & OLIVER
+    20. August 2027, ab 15 Uhr
+    Schloss Herten
+
+Bringt gute Laune, Tanzschuhe und
+euch selbst. Mehr braucht es nicht.`;
+const el=document.getElementById('typed');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce){el.textContent=text}
+else{
+ let i=0;
+ (function type(){
+  if(i<=text.length){
+   el.textContent=text.slice(0,i++);
+   const c=text[i-1];
+   setTimeout(type,c==='\n'?260:(c===' '?55:38+Math.random()*55));
+  }
+ })();
+}
+const progress=document.querySelector('.progress');
+addEventListener('scroll',()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.transform=`scaleX(${max>0?scrollY/max:0})`;
+},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>

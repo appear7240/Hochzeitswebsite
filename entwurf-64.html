@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 64 — Curtain Reveal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --butter:#F6E7A2;--butter-light:#FFFBE7;--gold:#C99A28;--cream:#FBF8EF;
+  --ink:#2B251C;--muted:#746A58;--white:#FFFDF8;--line:rgba(43,37,28,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,Arial,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.back{
+ position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid rgba(43,37,28,.16);
+ border-radius:999px;background:rgba(255,253,248,.82);backdrop-filter:blur(14px);font-size:.78rem;
+ letter-spacing:.08em;text-transform:uppercase;font-weight:700;transition:.25s
+}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:4px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.28em;font-weight:700;color:var(--gold)}
+.serif{font-family:"Cormorant Garamond",serif}
+.display{font-family:Italiana,serif}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.25rem;border-radius:999px;background:var(--ink);color:white;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.footer{padding:4rem 1.4rem;text-align:center;background:var(--ink);color:var(--butter-light)}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2.4rem,7vw,5rem)}
+.footer p{margin:.7rem 0 1.5rem;color:rgba(255,255,255,.7)}
+@media(max-width:700px){.back{left:10px;top:10px}.hide-mobile{display:none!important}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+
+body{background:#fffdf5}
+.stage{height:200vh;position:relative}
+.stage-sticky{position:sticky;top:0;height:100vh;overflow:hidden;background:linear-gradient(#f7e58d,#fff8d0);display:grid;place-items:center;text-align:center}
+.stage-copy{position:relative;z-index:3}.stage-copy h1{font:400 clamp(4rem,14vw,10rem)/.78 "Cormorant Garamond",serif}.stage-copy p{margin-top:1.5rem;letter-spacing:.18em;text-transform:uppercase;font-size:.77rem}
+.curtain{position:absolute;z-index:4;top:0;width:52%;height:100%;background:repeating-linear-gradient(90deg,#e4bd43 0 7%,#f7e58d 7% 14%,#cfa12a 14% 18%);box-shadow:inset -20px 0 50px rgba(86,58,4,.18);will-change:transform}.left{left:0}.right{right:0;transform:scaleX(-1)}
+.curtain:after{content:"";position:absolute;top:48%;width:80px;height:18px;border-radius:999px;background:#fff0a9;box-shadow:0 4px 15px rgba(58,42,10,.25)}.left:after{right:-25px}.right:after{right:-25px}
+.reveal-content{padding:8rem 7vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center}.arch{min-height:70vh;border-radius:50% 50% 18px 18px;background:linear-gradient(150deg,#e5c95d,#fffdf6);display:grid;place-items:center;font:400 clamp(5rem,12vw,10rem) Italiana;color:rgba(43,37,28,.18)}
+.reveal-content h2{font:400 clamp(3rem,7vw,6rem)/.9 "Cormorant Garamond",serif}.reveal-content p{margin-top:1.3rem;color:var(--muted);line-height:1.8}
+@media(max-width:760px){.reveal-content{grid-template-columns:1fr}.arch{min-height:420px}}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<section class="stage">
+ <div class="stage-sticky">
+  <div class="stage-copy"><span class="eyebrow">The curtain rises</span><h1>One day.<br>Our forever.</h1><p>20 August 2027 · Schloss Herten</p></div>
+  <div class="curtain left" data-curtain="left"></div><div class="curtain right" data-curtain="right"></div>
+ </div>
+</section>
+<section class="reveal-content"><div class="arch reveal">J&O</div><div class="reveal"><span class="eyebrow">Act I</span><h2>The beginning of our next chapter.</h2><p>Join us for an outdoor ceremony, champagne in the park, dinner in the castle and a night made for dancing.</p><p><strong>Friday · 20 August 2027 · 15:00</strong></p></div></section>
+<footer class="footer"><h2>Take your seat.</h2><p>Schloss Herten · We cannot wait to see you.</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Open location</a></footer>
+
+<script>
+const progress=document.querySelector('.progress');
+const update=()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ const p=max>0?scrollY/max:0;
+ if(progress)progress.style.transform=`scaleX(${p})`;
+ document.documentElement.style.setProperty('--scroll',p);
+ document.querySelectorAll('[data-parallax]').forEach(el=>{
+   const r=el.getBoundingClientRect(),s=parseFloat(el.dataset.parallax||'.2');
+   el.style.transform=`translate3d(0,${(r.top-innerHeight/2)*s*-0.12}px,0)`;
+ });
+};
+addEventListener('scroll',update,{passive:true});update();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+
+const stage=document.querySelector('.stage'),left=document.querySelector('[data-curtain="left"]'),right=document.querySelector('[data-curtain="right"]');
+const curtains=()=>{
+ const r=stage.getBoundingClientRect(),p=Math.min(1,Math.max(0,-r.top/(stage.offsetHeight-innerHeight)));
+ const x=p*102;
+ left.style.transform=`translateX(${-x}%)`;
+ right.style.transform=`scaleX(-1) translateX(${-x}%)`;
+};
+addEventListener('scroll',curtains,{passive:true});curtains();
+</script></body></html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 70 — Wachssiegel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{--butter:#F6E7A2;--gold:#C99A28;--cream:#FBF6E9;--ink:#2B251C;--muted:#746A58;--wax:#B23A2E;--line:rgba(43,37,28,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,Arial,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.back{position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid var(--line);border-radius:999px;background:rgba(255,253,248,.85);backdrop-filter:blur(14px);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;transition:.25s}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:4px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.28em;font-weight:700;color:var(--gold)}
+.serif{font-family:"Cormorant Garamond",serif}
+.script{font-family:"Pinyon Script",cursive}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.cta{display:inline-flex;padding:.95rem 1.35rem;border-radius:999px;background:var(--ink);color:#fff;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.hero{min-height:100vh;display:grid;place-items:center;padding:6rem 1.5rem;text-align:center;background:linear-gradient(#f3e6b8,var(--cream))}
+.envelope{position:relative;width:min(560px,92vw);perspective:1200px}
+.env-body{background:#fffdf6;border:1px solid var(--line);border-radius:14px;box-shadow:0 40px 90px -50px rgba(94,81,31,.5);padding:clamp(2.2rem,6vw,3.6rem) clamp(1.4rem,5vw,3rem) 3rem}
+.flap{position:absolute;left:0;right:0;top:0;height:46%;background:linear-gradient(#efdf9e,#e6ce74);border-radius:14px 14px 0 0;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 1.2s cubic-bezier(.2,.8,.2,1);z-index:3}
+.envelope.open .flap{transform:rotateX(178deg)}
+.seal{position:absolute;left:50%;top:40%;translate:-50% -50%;z-index:4;width:88px;height:88px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d9584a,var(--wax) 60%,#8c2b21);color:#f9e3d9;display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:1.6rem;letter-spacing:.05em;box-shadow:0 10px 26px rgba(140,43,33,.45);cursor:pointer;border:none;transition:transform 1s ease,opacity 1s ease}
+.envelope.open .seal{transform:scale(.4) rotate(30deg);opacity:0;pointer-events:none}
+.letter{opacity:0;transform:translateY(14px);transition:opacity .9s .5s ease,transform .9s .5s ease}
+.envelope.open .letter{opacity:1;transform:none}
+.letter h1{font-size:clamp(2.6rem,8vw,4.4rem);font-weight:400;line-height:1}
+.letter .names{font-size:clamp(3.2rem,10vw,5.6rem);color:var(--gold)}
+.letter p{margin-top:1.1rem;color:var(--muted);line-height:1.8}
+.hint{margin-top:2rem;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.section{max-width:820px;margin:0 auto;padding:7rem 1.5rem;text-align:center}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem;text-align:left}
+.card{background:#fffdf6;border:1px solid var(--line);border-radius:16px;padding:1.6rem;box-shadow:0 24px 60px -46px rgba(94,81,31,.55)}
+.card h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:1.6rem;margin:.4rem 0 .3rem}
+.card p{color:var(--muted);font-size:.95rem;line-height:1.7}
+.footer{padding:4.5rem 1.4rem;text-align:center;background:var(--ink);color:#fdf6da}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2.2rem,6vw,4rem)}
+.footer p{margin:.7rem 0 1.5rem;color:rgba(255,255,255,.7)}
+@media(max-width:760px){.cards{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+ .letter{opacity:1;transform:none}
+}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero">
+ <div>
+  <div class="envelope" id="env">
+   <div class="flap"></div>
+   <button class="seal" id="seal" aria-label="Siegel brechen und Einladung öffnen">J&O</button>
+   <div class="env-body">
+    <div class="letter">
+     <span class="eyebrow">Mit Freude laden ein</span>
+     <h1 class="serif">Zur Hochzeit von</h1>
+     <div class="script names">Julia &amp; Oliver</div>
+     <p>20. August 2027 · 14 Uhr<br>Schloss Herten</p>
+    </div>
+   </div>
+  </div>
+  <p class="hint" id="hint">Siegel antippen, um den Brief zu öffnen</p>
+ </div>
+</header>
+
+<section class="section">
+ <span class="eyebrow reveal">Was im Brief steht</span>
+ <h2 class="serif reveal" style="font-size:clamp(2.4rem,6vw,4rem);font-weight:400;margin-top:.6rem">Drei Zeilen, ein Versprechen.</h2>
+ <div class="cards">
+  <article class="card reveal"><span class="eyebrow">15:00 Uhr</span><h3>Freie Trauung</h3><p>Im Schlosspark, unter freiem Himmel und alten Bäumen.</p></article>
+  <article class="card reveal"><span class="eyebrow">17:00 Uhr</span><h3>Empfang</h3><p>Champagner auf der Terrasse, Zeit für Umarmungen und Fotos.</p></article>
+  <article class="card reveal"><span class="eyebrow">19:00 Uhr</span><h3>Dinner &amp; Tanz</h3><p>Ein langer Sommerabend, bis die letzte Kerze erlischt.</p></article>
+ </div>
+</section>
+
+<footer class="footer"><h2>Antwortet uns wie früher: mit einem Brief.</h2><p>Oder ganz einfach digital – Hauptsache, ihr kommt.</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten" style="background:var(--butter);color:var(--ink)">Route öffnen</a></footer>
+
+<script>
+const env=document.getElementById('env'),seal=document.getElementById('seal'),hint=document.getElementById('hint');
+function open(){env.classList.add('open');hint.style.opacity='0'}
+seal.addEventListener('click',open);
+addEventListener('scroll',()=>{if(scrollY>60)open()},{passive:true});
+const progress=document.querySelector('.progress');
+addEventListener('scroll',()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.transform=`scaleX(${max>0?scrollY/max:0})`;
+},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>

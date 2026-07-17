@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 62 — Ribbon Timeline</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --butter:#F6E7A2;--butter-light:#FFFBE7;--gold:#C99A28;--cream:#FBF8EF;
+  --ink:#2B251C;--muted:#746A58;--white:#FFFDF8;--line:rgba(43,37,28,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,Arial,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.back{
+ position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid rgba(43,37,28,.16);
+ border-radius:999px;background:rgba(255,253,248,.82);backdrop-filter:blur(14px);font-size:.78rem;
+ letter-spacing:.08em;text-transform:uppercase;font-weight:700;transition:.25s
+}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:4px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.28em;font-weight:700;color:var(--gold)}
+.serif{font-family:"Cormorant Garamond",serif}
+.display{font-family:Italiana,serif}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.25rem;border-radius:999px;background:var(--ink);color:white;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.footer{padding:4rem 1.4rem;text-align:center;background:var(--ink);color:var(--butter-light)}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2.4rem,7vw,5rem)}
+.footer p{margin:.7rem 0 1.5rem;color:rgba(255,255,255,.7)}
+@media(max-width:700px){.back{left:10px;top:10px}.hide-mobile{display:none!important}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+
+body{background:#fffdf6}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:7rem 1.4rem;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(4.2rem,15vw,11rem);font-weight:400;line-height:.78}.hero .sub{margin-top:1.5rem;color:var(--muted)}
+.ribbon-wrap{position:absolute;inset:0;pointer-events:none}.ribbon{position:absolute;left:-15%;top:55%;width:130%;height:90px;background:var(--butter);transform:rotate(-7deg);box-shadow:0 20px 50px rgba(162,126,29,.12)}
+.story{position:relative;padding:8rem 8vw 10rem}.line{position:absolute;left:50%;top:0;bottom:0;width:4px;background:#e8dfc6;transform:translateX(-50%);overflow:hidden}.line:after{content:"";display:block;width:100%;height:calc(var(--scroll,0)*100%);background:var(--gold)}
+.moment{min-height:70vh;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.moment:nth-child(even) .copy{grid-column:2}.moment:nth-child(even) .visual{grid-column:1;grid-row:1}
+.copy h2{font:400 clamp(3rem,7vw,6rem) "Cormorant Garamond",serif;line-height:.9}.copy p{margin-top:1rem;line-height:1.8;color:var(--muted)}
+.visual{height:48vh;border-radius:50% 50% 12px 12px;background:linear-gradient(145deg,#f7e58d,#fffdf7);box-shadow:0 24px 70px rgba(122,93,20,.15);display:grid;place-items:center;font:400 clamp(5rem,13vw,10rem) Italiana;color:rgba(63,49,20,.22)}
+@media(max-width:760px){.line{left:24px}.moment{grid-template-columns:1fr;padding-left:40px}.moment:nth-child(even) .copy,.moment:nth-child(even) .visual{grid-column:auto;grid-row:auto}.visual{height:340px}}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero"><div class="ribbon-wrap"><div class="ribbon" data-parallax=".6"></div></div><div style="position:relative"><span class="eyebrow">Ein Band verbindet uns</span><h1 class="serif">Unser Weg<br>zum Ja.</h1><p class="sub">Julia & Oliver · 20. August 2027</p></div></header>
+<section class="story">
+ <div class="line"></div>
+ <article class="moment"><div class="copy reveal"><span class="eyebrow">15:00</span><h2>Das Versprechen</h2><p>Unsere Trauung im Schlosspark beginnt – umgeben von euch und dem warmen Licht eines Sommertages.</p></div><div class="visual reveal">JA</div></article>
+ <article class="moment"><div class="copy reveal"><span class="eyebrow">17:00</span><h2>Das Anstoßen</h2><p>Champagner, Gratulationen und Zeit, den Augenblick gemeinsam zu genießen.</p></div><div class="visual reveal">♥</div></article>
+ <article class="moment"><div class="copy reveal"><span class="eyebrow">19:00</span><h2>Das Fest</h2><p>Dinner, Musik und eine Tanzfläche, die erst dann still wird, wenn der Morgen beginnt.</p></div><div class="visual reveal">∞</div></article>
+</section>
+<footer class="footer"><h2>Folgt dem gelben Band.</h2><p>Schloss Herten · Freitag, 20.08.2027</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Zum Schloss</a></footer>
+
+<script>
+const progress=document.querySelector('.progress');
+const update=()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ const p=max>0?scrollY/max:0;
+ if(progress)progress.style.transform=`scaleX(${p})`;
+ document.documentElement.style.setProperty('--scroll',p);
+ document.querySelectorAll('[data-parallax]').forEach(el=>{
+   const r=el.getBoundingClientRect(),s=parseFloat(el.dataset.parallax||'.2');
+   el.style.transform=`translate3d(0,${(r.top-innerHeight/2)*s*-0.12}px,0)`;
+ });
+};
+addEventListener('scroll',update,{passive:true});update();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 63 — Champagne Pearls</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --butter:#F6E7A2;--butter-light:#FFFBE7;--gold:#C99A28;--cream:#FBF8EF;
+  --ink:#2B251C;--muted:#746A58;--white:#FFFDF8;--line:rgba(43,37,28,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,Arial,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.back{
+ position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid rgba(43,37,28,.16);
+ border-radius:999px;background:rgba(255,253,248,.82);backdrop-filter:blur(14px);font-size:.78rem;
+ letter-spacing:.08em;text-transform:uppercase;font-weight:700;transition:.25s
+}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:4px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.28em;font-weight:700;color:var(--gold)}
+.serif{font-family:"Cormorant Garamond",serif}
+.display{font-family:Italiana,serif}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.25rem;border-radius:999px;background:var(--ink);color:white;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.footer{padding:4rem 1.4rem;text-align:center;background:var(--ink);color:var(--butter-light)}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2.4rem,7vw,5rem)}
+.footer p{margin:.7rem 0 1.5rem;color:rgba(255,255,255,.7)}
+@media(max-width:700px){.back{left:10px;top:10px}.hide-mobile{display:none!important}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+
+body{background:#2b251c;color:#fffdf4}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:7rem 1rem;background:radial-gradient(circle at 50% 80%,#8c6b20 0,transparent 32%),#262118}
+.hero h1{font:400 clamp(4.3rem,15vw,11rem)/.76 "Cormorant Garamond",serif}.hero p{margin-top:1.6rem;color:#e5d58b;letter-spacing:.2em;text-transform:uppercase;font-size:.78rem}
+.bubble{position:absolute;border-radius:50%;border:1px solid rgba(255,240,177,.45);background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.5),rgba(246,231,162,.06) 50%,transparent);animation:bob 5s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-35px) scale(1.06)}}
+.toast{padding:9rem 6vw;background:linear-gradient(#2b251c,#493a1c);display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.toast-card{min-height:62vh;border:1px solid rgba(246,231,162,.28);border-radius:999px 999px 28px 28px;padding:5rem 2rem 2rem;display:flex;flex-direction:column;justify-content:flex-end;text-align:center;background:linear-gradient(180deg,rgba(246,231,162,.08),rgba(255,255,255,.02))}
+.toast-card h2{font:400 clamp(2.5rem,5vw,4rem) "Cormorant Garamond",serif}.toast-card p{color:rgba(255,255,255,.65);line-height:1.8}
+.footer{background:#f6e7a2;color:#2b251c}.footer p{color:#6d6049}.footer .cta{background:#2b251c}
+@media(max-width:800px){.toast{grid-template-columns:1fr}.toast-card{min-height:480px}}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero">
+ <span class="bubble" style="width:90px;height:90px;left:8%;top:15%;animation-delay:-1s" data-parallax=".5"></span>
+ <span class="bubble" style="width:150px;height:150px;right:8%;top:22%;animation-delay:-3s" data-parallax=".7"></span>
+ <span class="bubble" style="width:50px;height:50px;left:25%;bottom:10%;animation-delay:-2s" data-parallax=".35"></span>
+ <div><span class="eyebrow">Raise your glass</span><h1>Champagne<br>& Pearls</h1><p>Julia & Oliver · Schloss Herten</p></div>
+</header>
+<section class="toast">
+ <article class="toast-card reveal"><span class="eyebrow">Toast one</span><h2>To the past</h2><p>For every coincidence and every person who brought us here.</p></article>
+ <article class="toast-card reveal"><span class="eyebrow">Toast two</span><h2>To this day</h2><p>For a castle, a summer evening and all of you celebrating beside us.</p></article>
+ <article class="toast-card reveal"><span class="eyebrow">Toast three</span><h2>To forever</h2><p>For everything that begins when we say yes on 20 August 2027.</p></article>
+</section>
+<footer class="footer"><h2>Cheers to love.</h2><p>Dresscode: Hellgrau & Pastelltöne · Butter Yellow Details</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Directions</a></footer>
+
+<script>
+const progress=document.querySelector('.progress');
+const update=()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ const p=max>0?scrollY/max:0;
+ if(progress)progress.style.transform=`scaleX(${p})`;
+ document.documentElement.style.setProperty('--scroll',p);
+ document.querySelectorAll('[data-parallax]').forEach(el=>{
+   const r=el.getBoundingClientRect(),s=parseFloat(el.dataset.parallax||'.2');
+   el.style.transform=`translate3d(0,${(r.top-innerHeight/2)*s*-0.12}px,0)`;
+ });
+};
+addEventListener('scroll',update,{passive:true});update();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>

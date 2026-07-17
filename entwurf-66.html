@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 66 — Gästebuch Mosaik</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --butter:#F6E7A2;--butter-light:#FFFBE7;--gold:#C99A28;--cream:#FBF8EF;
+  --ink:#2B251C;--muted:#746A58;--white:#FFFDF8;--line:rgba(43,37,28,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,Arial,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.back{
+ position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid rgba(43,37,28,.16);
+ border-radius:999px;background:rgba(255,253,248,.82);backdrop-filter:blur(14px);font-size:.78rem;
+ letter-spacing:.08em;text-transform:uppercase;font-weight:700;transition:.25s
+}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:4px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.28em;font-weight:700;color:var(--gold)}
+.serif{font-family:"Cormorant Garamond",serif}
+.display{font-family:Italiana,serif}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.25rem;border-radius:999px;background:var(--ink);color:white;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.footer{padding:4rem 1.4rem;text-align:center;background:var(--ink);color:var(--butter-light)}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2.4rem,7vw,5rem)}
+.footer p{margin:.7rem 0 1.5rem;color:rgba(255,255,255,.7)}
+@media(max-width:700px){.back{left:10px;top:10px}.hide-mobile{display:none!important}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+
+body{background:#fffaf0}
+.hero{min-height:90vh;display:flex;align-items:flex-end;padding:8rem 6vw 5rem;background:linear-gradient(150deg,#fffdf6 25%,#f6e7a2)}
+.hero h1{font:400 clamp(4.5rem,15vw,11rem)/.75 "Cormorant Garamond",serif}.hero p{margin-top:1.5rem;color:var(--muted);max-width:48ch;line-height:1.8}
+.mosaic{padding:4rem 3vw 9rem;columns:3 280px;column-gap:1rem}.note{break-inside:avoid;margin:0 0 1rem;padding:2rem;background:white;border:1px solid var(--line);box-shadow:0 18px 45px rgba(91,72,30,.08);border-radius:18px;transform:rotate(var(--r));transition:.35s}.note:hover{transform:rotate(0) translateY(-6px)}
+.note:nth-child(3n){background:#f6e7a2}.note:nth-child(4n){border-radius:50% 50% 18px 18px;padding-top:4rem}.note blockquote{font:400 clamp(1.8rem,3vw,2.5rem)/1.15 "Cormorant Garamond",serif}.note span{display:block;margin-top:1.2rem;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero"><div><span class="eyebrow">Stimmen, die bleiben</span><h1>Unser<br>Gästebuch.</h1><p>Ein lebendiges Mosaik aus Wünschen, Erinnerungen und kleinen Botschaften – jede Karte erscheint beim Scrollen wie ein neuer Eintrag.</p></div></header>
+<section class="mosaic">
+ <article class="note reveal" style="--r:-2deg"><blockquote>„Für heute ganz viel Sonne – und für immer ganz viel Leichtigkeit.“</blockquote><span>Familie</span></article>
+ <article class="note reveal" style="--r:1.5deg"><blockquote>„Tanzt, bis das Schloss wieder aufwacht.“</blockquote><span>Freunde</span></article>
+ <article class="note reveal" style="--r:-1deg"><blockquote>„Zwei Menschen, ein Versprechen, unendlich viele Kapitel.“</blockquote><span>20. August 2027</span></article>
+ <article class="note reveal" style="--r:2deg"><blockquote>„Das Schönste an eurem Weg: Ihr geht ihn zusammen.“</blockquote><span>Von Herzen</span></article>
+ <article class="note reveal" style="--r:-1.5deg"><blockquote>„Möge euer Alltag immer ein bisschen Butter Yellow bleiben.“</blockquote><span>Julia & Oliver</span></article>
+ <article class="note reveal" style="--r:.5deg"><blockquote>„Schloss Herten wird heute zum Ort eurer Geschichte.“</blockquote><span>Save the date</span></article>
+ <article class="note reveal" style="--r:-2deg"><blockquote>„Auf Liebe, Freundschaft und einen unvergesslichen Sommerabend.“</blockquote><span>Cheers</span></article>
+ <article class="note reveal" style="--r:1deg"><blockquote>„Heute beginnt nicht alles neu – aber alles gemeinsam.“</blockquote><span>Das Ja-Wort</span></article>
+</section>
+<footer class="footer"><h2>Schreibt mit uns Geschichte.</h2><p>Julia & Oliver · 20.08.2027</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Zum Fest</a></footer>
+
+<script>
+const progress=document.querySelector('.progress');
+const update=()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ const p=max>0?scrollY/max:0;
+ if(progress)progress.style.transform=`scaleX(${p})`;
+ document.documentElement.style.setProperty('--scroll',p);
+ document.querySelectorAll('[data-parallax]').forEach(el=>{
+   const r=el.getBoundingClientRect(),s=parseFloat(el.dataset.parallax||'.2');
+   el.style.transform=`translate3d(0,${(r.top-innerHeight/2)*s*-0.12}px,0)`;
+ });
+};
+addEventListener('scroll',update,{passive:true});update();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>

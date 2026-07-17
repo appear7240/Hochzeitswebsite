@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#141625"><title>Entwurf 71 — Sternbild</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--butter:#F6E7A2;--gold:#E4C25B;--night:#141625;--night-2:#1D2033;--ink:#F4EFDD;--muted:rgba(244,239,221,.62);--line:rgba(244,239,221,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,Arial,sans-serif;color:var(--ink);background:var(--night);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.back{position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid var(--line);border-radius:999px;background:rgba(20,22,37,.75);backdrop-filter:blur(14px);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;transition:.25s}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:4px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.3em;font-weight:700;color:var(--gold)}
+.serif{font-family:"Cormorant Garamond",serif}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:6rem 1.5rem;background:radial-gradient(ellipse at 50% 110%,#2a2d4a,var(--night) 60%)}
+.sky{position:absolute;inset:0;pointer-events:none}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.7;animation:twinkle 3.4s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.25;transform:scale(.7)}to{opacity:.95;transform:scale(1.15)}}
+.constellation{width:min(420px,80vw);margin:0 auto 1.6rem}
+.constellation path{fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 4s ease forwards .6s}
+.constellation circle{fill:#fff}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero h1{font-size:clamp(3rem,11vw,7rem);font-weight:400;line-height:1}
+.hero .sub{margin-top:1rem;letter-spacing:.28em;text-transform:uppercase;font-size:.82rem;color:var(--muted)}
+.count{display:flex;gap:clamp(.8rem,4vw,2.2rem);justify-content:center;margin-top:2.6rem;flex-wrap:wrap}
+.count div{min-width:86px;padding:1rem .8rem;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03)}
+.count b{display:block;font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2rem,6vw,3rem);color:var(--gold)}
+.count span{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.section{max-width:900px;margin:0 auto;padding:7.5rem 1.5rem;text-align:center}
+.section h2{font-size:clamp(2.2rem,6vw,4rem);font-weight:400}
+.section p{margin-top:1rem;color:var(--muted);line-height:1.9;max-width:56ch;margin-inline:auto}
+.orbits{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem;text-align:left}
+.orbit{border:1px solid var(--line);border-radius:18px;padding:1.7rem;background:linear-gradient(160deg,rgba(255,255,255,.05),transparent)}
+.orbit h3{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:1.7rem;margin:.4rem 0 .35rem}
+.orbit p{margin:0;font-size:.95rem}
+.footer{padding:4.5rem 1.4rem;text-align:center;border-top:1px solid var(--line)}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2rem,6vw,3.6rem)}
+.footer p{margin:.7rem 0 1.4rem;color:var(--muted)}
+.cta{display:inline-flex;padding:.95rem 1.35rem;border-radius:999px;background:var(--butter);color:#141625;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+@media(max-width:760px){.orbits{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+ .constellation path{stroke-dashoffset:0}
+}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero">
+ <div class="sky" id="sky" aria-hidden="true"></div>
+ <div>
+  <svg class="constellation" viewBox="0 0 420 150" aria-hidden="true">
+   <path d="M30 110 L90 40 L150 95 L210 30 L270 100 L330 45 L390 105"/>
+   <circle cx="30" cy="110" r="3.4"/><circle cx="90" cy="40" r="3.4"/><circle cx="150" cy="95" r="3.4"/>
+   <circle cx="210" cy="30" r="4.4"/><circle cx="270" cy="100" r="3.4"/><circle cx="330" cy="45" r="3.4"/><circle cx="390" cy="105" r="3.4"/>
+  </svg>
+  <span class="eyebrow">Unter demselben Himmel</span>
+  <h1 class="serif">Julia &amp; Oliver</h1>
+  <p class="sub">20 · 08 · 2027 · Schloss Herten</p>
+  <div class="count" aria-label="Countdown bis zur Hochzeit">
+   <div><b data-count="days">–</b><span>Tage</span></div>
+   <div><b data-count="hours">–</b><span>Stunden</span></div>
+   <div><b data-count="mins">–</b><span>Minuten</span></div>
+   <div><b data-count="secs">–</b><span>Sekunden</span></div>
+  </div>
+ </div>
+</header>
+
+<section class="section">
+ <span class="eyebrow reveal">Der Abendplan</span>
+ <h2 class="serif reveal">Bis die Sterne aufgehen.</h2>
+ <p class="reveal">Wir feiern vom Nachmittag bis tief in die Sommernacht – zum Ende wartet ein Blick in den Himmel über dem Schlosspark.</p>
+ <div class="orbits">
+  <article class="orbit reveal"><span class="eyebrow">15:00</span><h3>Trauung</h3><p>Im goldenen Nachmittagslicht des Parks.</p></article>
+  <article class="orbit reveal"><span class="eyebrow">19:30</span><h3>Dinner</h3><p>Bei Kerzenschein im Schlosssaal.</p></article>
+  <article class="orbit reveal"><span class="eyebrow">23:00</span><h3>Sternstunde</h3><p>Tanz auf der Terrasse unter freiem Himmel.</p></article>
+ </div>
+</section>
+
+<footer class="footer"><h2>Wir sehen uns unterm Sternenzelt.</h2><p>Julia &amp; Oliver · Schloss Herten</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Route öffnen</a></footer>
+
+<script>
+const sky=document.getElementById('sky');
+for(let i=0;i<70;i++){
+ const s=document.createElement('span');s.className='star';
+ s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+ s.style.animationDelay=(Math.random()*3)+'s';s.style.animationDuration=(2.4+Math.random()*3)+'s';
+ sky.appendChild(s);
+}
+const target=new Date("2027-08-20T14:00:00+02:00").getTime();
+const pad=n=>String(n).padStart(2,"0");
+function tick(){
+ const d=Math.max(0,target-Date.now());
+ const v={days:Math.floor(d/86400000),hours:Math.floor(d%86400000/3600000),mins:Math.floor(d%3600000/60000),secs:Math.floor(d%60000/1000)};
+ document.querySelectorAll('[data-count]').forEach(el=>{const k=el.dataset.count;el.textContent=k==='days'?v[k]:pad(v[k])});
+}
+tick();setInterval(tick,1000);
+const progress=document.querySelector('.progress');
+addEventListener('scroll',()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.transform=`scaleX(${max>0?scrollY/max:0})`;
+},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>

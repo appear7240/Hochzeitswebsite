@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 73 — Menu d'Amour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--butter:#F6E7A2;--gold:#C99A28;--cream:#FDFAF1;--ink:#2B251C;--muted:#746A58;--line:rgba(43,37,28,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Jost,Arial,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.back{position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid var(--line);border-radius:999px;background:rgba(253,250,241,.85);backdrop-filter:blur(14px);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;transition:.25s}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:4px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.32em;font-weight:600;color:var(--gold)}
+.serif{font-family:"Cormorant Garamond",serif}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.menu{max-width:680px;margin:0 auto;padding:6rem 1.5rem 4rem;text-align:center}
+.card{border:1px solid var(--gold);outline:4px double var(--gold);outline-offset:8px;padding:clamp(2.4rem,7vw,4.5rem) clamp(1.2rem,5vw,3.4rem);background:#fffdf6}
+.card h1{font-size:clamp(2.8rem,9vw,5.4rem);font-weight:400;line-height:1.02}
+.card .amp{color:var(--gold);font-style:italic}
+.card .date{margin-top:1rem;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--muted)}
+.divider{display:flex;align-items:center;gap:1rem;margin:3.2rem 0 2.4rem;color:var(--gold)}
+.divider:before,.divider:after{content:"";height:1px;flex:1;background:var(--line)}
+.gang{margin-bottom:2.6rem}
+.gang h2{font-size:clamp(1.7rem,5vw,2.4rem);font-weight:500}
+.gang .zeit{font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.gang p{margin-top:.45rem;color:var(--muted);font-size:1.02rem;line-height:1.75;font-style:italic;font-family:"Cormorant Garamond",serif;font-size:1.2rem}
+.pairing{margin-top:.4rem;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.note{max-width:620px;margin:0 auto;padding:3rem 1.5rem 6rem;text-align:center;color:var(--muted);line-height:1.9}
+.footer{padding:4.5rem 1.4rem;text-align:center;background:var(--ink);color:#fdf6da}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2rem,6vw,3.6rem)}
+.footer p{margin:.7rem 0 1.4rem;color:rgba(255,255,255,.7)}
+.cta{display:inline-flex;padding:.95rem 1.35rem;border-radius:999px;background:var(--butter);color:var(--ink);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<main class="menu">
+ <div class="card">
+  <span class="eyebrow">Menu d'Amour · Schloss Herten</span>
+  <h1 class="serif" style="margin-top:.8rem">Julia <span class="amp">&amp;</span> Oliver</h1>
+  <p class="date">Serviert am 20. August 2027</p>
+
+  <div class="divider serif reveal">✻</div>
+
+  <section class="gang reveal">
+   <span class="zeit">Amuse-Bouche · 15:00</span>
+   <h2 class="serif">Die Trauung</h2>
+   <p>Zwei Ja-Worte, zart angerichtet im Schlosspark, an Sommerbrise und Gänsehaut.</p>
+   <span class="pairing">Dazu: Taschentücher, gut gekühlt</span>
+  </section>
+
+  <section class="gang reveal">
+   <span class="zeit">Erster Gang · 17:00</span>
+   <h2 class="serif">Der Empfang</h2>
+   <p>Champagner an goldener Nachmittagssonne, garniert mit Umarmungen und ersten Anekdoten.</p>
+   <span class="pairing">Dazu: Fotos, reichlich</span>
+  </section>
+
+  <section class="gang reveal">
+   <span class="zeit">Hauptgang · 19:00</span>
+   <h2 class="serif">Das Dinner</h2>
+   <p>Ein langer Tisch, ein langes Menü, dazu Reden in drei Gängen – gerührt, nicht geschüttelt.</p>
+   <span class="pairing">Dazu: Wein aus der Schlossauswahl</span>
+  </section>
+
+  <section class="gang reveal">
+   <span class="zeit">Dessert · 21:30</span>
+   <h2 class="serif">Der Tanz</h2>
+   <p>Süß, leicht überzuckert, wird bis in die frühen Morgenstunden nachgereicht.</p>
+   <span class="pairing">Dazu: Eure besten Moves</span>
+  </section>
+
+  <div class="divider serif reveal">✻</div>
+  <p class="reveal" style="color:var(--muted);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase">Der Küchenchef empfiehlt: bequeme Schuhe</p>
+ </div>
+</main>
+
+<p class="note reveal">Unverträglichkeiten? Sagt uns rechtzeitig Bescheid – für Herz und Teller finden wir immer eine Lösung.</p>
+
+<footer class="footer"><h2>Réservation erbeten.</h2><p>Julia &amp; Oliver · Schloss Herten</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Route öffnen</a></footer>
+
+<script>
+const progress=document.querySelector('.progress');
+addEventListener('scroll',()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.transform=`scaleX(${max>0?scrollY/max:0})`;
+},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>
