@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 88 — Pearl Stamp</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --butter:#F6E7A2; --butter-light:#FFFBEA; --gold:#C79A2A; --gold-soft:#E4C979;
+  --cream:#FBF7EE; --ink:#2E271D; --muted:#756A58; --line:rgba(46,39,29,.14); --white:#FFFDF9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.back{position:fixed;left:16px;top:16px;z-index:50;padding:.8rem 1rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,253,249,.84);backdrop-filter:blur(12px);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.progress{position:fixed;left:0;top:0;height:4px;width:100%;background:var(--gold);transform-origin:left;transform:scaleX(0);z-index:60}
+.eyebrow{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.serif{font-family:"Cormorant Garamond",serif}
+.display{font-family:Italiana,serif}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:1rem 1.3rem;border-radius:999px;background:var(--ink);color:white;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.footer{padding:4rem 1.4rem;text-align:center;background:var(--ink);color:var(--butter-light)}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2.4rem,7vw,5rem)}
+.footer p{margin:.8rem 0 1.4rem;color:rgba(255,255,255,.72)}
+@media(max-width:720px){.back{left:10px;top:10px}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+
+body{background:linear-gradient(180deg,#fffdf6,#f7efd9)}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:7rem 1rem 5rem;position:relative;overflow:hidden}
+.string{position:absolute;left:50%;top:0;width:2px;height:26vh;background:linear-gradient(180deg,rgba(199,154,42,.35),transparent)}
+.medallion{width:min(78vw,340px);aspect-ratio:1;border-radius:50%;margin:2rem auto;background:radial-gradient(circle at 30% 28%,#fffef9 0 10%,#f5e7b4 28%,#d5b866 58%,#b28728 100%);display:grid;place-items:center;position:relative;box-shadow:0 28px 70px rgba(171,132,36,.22)}
+.medallion:before{content:"";position:absolute;inset:-18px;border-radius:50%;border:1px dashed rgba(199,154,42,.38)}
+.pearls{position:absolute;inset:-34px;border-radius:50%;pointer-events:none}
+.pearls i{position:absolute;width:16px;height:16px;border-radius:50%;background:#fffaf0;box-shadow:inset 0 -2px 5px rgba(0,0,0,.08)}
+.hero h1{font:400 clamp(4.2rem,14vw,10rem)/.76 "Cormorant Garamond",serif}
+.hero p{max-width:48ch;margin:1.4rem auto 0;color:var(--muted);line-height:1.8}
+.steps{padding:4rem 6vw 8rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.step{padding:2rem;border-radius:26px;background:#fff;border:1px solid var(--line)}
+.step strong{font:400 3rem Italiana;color:var(--gold)} .step h3{font:400 2rem "Cormorant Garamond",serif}
+.step p{margin-top:.7rem;color:var(--muted);line-height:1.75}
+@media(max-width:800px){.steps{grid-template-columns:1fr}}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<section class="hero">
+ <div class="string"></div>
+ <div class="medallion reveal"><div class="pearls">
+   <i style="left:46%;top:-8px"></i><i style="right:10%;top:18%"></i><i style="right:-4px;top:48%"></i><i style="right:12%;bottom:16%"></i><i style="left:46%;bottom:-8px"></i><i style="left:10%;bottom:18%"></i><i style="left:-4px;top:48%"></i><i style="left:12%;top:16%"></i>
+ </div><div style="font:400 clamp(2rem,7vw,4rem) Italiana;color:#fff7d8">J&O</div></div>
+ <span class="eyebrow">Perlen & Prägung</span><h1 class="serif">Pearl<br>Stamp</h1><p>Ein besonders romantischer, aber moderner Entwurf: das Monogramm-Siegel ist von feinen Perlen umrahmt und wirkt hochwertig statt verspielt.</p>
+</section>
+<section class="steps">
+ <article class="step reveal"><strong>01</strong><h3>Einladung</h3><p>Ein cleaner Einstieg mit großer Monogramm-Medaille.</p></article>
+ <article class="step reveal"><strong>02</strong><h3>Moment</h3><p>20. August 2027 · Schloss Herten · Butter Yellow Details.</p></article>
+ <article class="step reveal"><strong>03</strong><h3>Erinnerung</h3><p>Ein Design, das sich wie Schmuck für eure Hochzeit anfühlt.</p></article>
+</section>
+<footer class="footer"><h2>Edel wie ein Erinnerungsstück.</h2><p>Julia & Oliver · Schloss Herten</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Location</a></footer>
+
+<script>
+const progress=document.querySelector('.progress');
+const update=()=>{
+  const max=document.documentElement.scrollHeight-innerHeight;
+  const p=max>0?scrollY/max:0;
+  if(progress) progress.style.transform=`scaleX(${p})`;
+  document.documentElement.style.setProperty('--scroll', p);
+  document.querySelectorAll('[data-parallax]').forEach(el=>{
+    const r=el.getBoundingClientRect(), s=parseFloat(el.dataset.parallax||'.2');
+    el.style.transform=`translate3d(0,${(r.top-innerHeight/2)*s*-0.12}px,0)`;
+  });
+};
+addEventListener('scroll',update,{passive:true}); update();
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); }),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script></body></html>

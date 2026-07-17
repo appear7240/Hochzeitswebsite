@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 85 — Satin Crest</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --butter:#F6E7A2; --butter-light:#FFFBEA; --gold:#C79A2A; --gold-soft:#E4C979;
+  --cream:#FBF7EE; --ink:#2E271D; --muted:#756A58; --line:rgba(46,39,29,.14); --white:#FFFDF9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.back{position:fixed;left:16px;top:16px;z-index:50;padding:.8rem 1rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,253,249,.84);backdrop-filter:blur(12px);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.progress{position:fixed;left:0;top:0;height:4px;width:100%;background:var(--gold);transform-origin:left;transform:scaleX(0);z-index:60}
+.eyebrow{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.serif{font-family:"Cormorant Garamond",serif}
+.display{font-family:Italiana,serif}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:1rem 1.3rem;border-radius:999px;background:var(--ink);color:white;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.footer{padding:4rem 1.4rem;text-align:center;background:var(--ink);color:var(--butter-light)}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2.4rem,7vw,5rem)}
+.footer p{margin:.8rem 0 1.4rem;color:rgba(255,255,255,.72)}
+@media(max-width:720px){.back{left:10px;top:10px}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+
+body{background:#fbf7ef}
+.hero{min-height:100vh;padding:7rem 6vw 5rem;display:grid;grid-template-columns:1.05fr .95fr;gap:5vw;align-items:center}
+.crest-wrap{position:relative;min-height:72vh;display:grid;place-items:center}
+.ribbon{position:absolute;width:82%;height:74px;border-radius:999px;background:linear-gradient(90deg,#f2df85,#fff0b7,#edcb59);box-shadow:0 16px 30px rgba(170,134,40,.18)}
+.ribbon.r2{transform:rotate(90deg)}
+.crest{position:relative;width:min(74vw,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 28%,#fffef5,#f1e0a1 28%,#d1ae42 67%,#b18520 100%);display:grid;place-items:center;box-shadow:0 30px 80px rgba(160,123,34,.22)}
+.crest:before{content:"";position:absolute;inset:12%;border-radius:50%;border:1px solid rgba(255,251,225,.75)}
+.crest strong{font:400 clamp(2.3rem,6vw,4rem) Italiana;color:#fff7dd;letter-spacing:.04em}
+.hero-copy h1{font:400 clamp(4rem,11vw,8rem)/.84 "Cormorant Garamond",serif}
+.hero-copy p{margin:1.3rem 0 2rem;color:var(--muted);line-height:1.8}
+.band{padding:5rem 6vw;background:linear-gradient(180deg,#fffdf7,#f4ecd3)}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.tile{padding:2.2rem;border-radius:30px;border:1px solid var(--line);background:white}
+.tile h3{font:400 2rem "Cormorant Garamond",serif}
+.tile p{margin-top:.7rem;color:var(--muted);line-height:1.75}
+@media(max-width:840px){.hero{grid-template-columns:1fr}.cols{grid-template-columns:1fr}}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero">
+ <div class="crest-wrap reveal"><div class="ribbon"></div><div class="ribbon r2"></div><div class="crest"><strong>J&O</strong></div></div>
+ <div class="hero-copy reveal"><span class="eyebrow">Satin & Siegel</span><h1>Satin<br>Crest</h1><p>Eine weichere, elegante Interpretation des Wachssiegels: kombiniert mit satinierten Bändern, moderner Anmutung und klaren Informationsblöcken.</p><a class="cta" href="#details">Details ansehen</a></div>
+</header>
+<section class="band" id="details"><div class="cols">
+ <article class="tile reveal"><span class="eyebrow">Location</span><h3>Schloss Herten</h3><p>Die Feier von Julia & Oliver findet am 20. August 2027 in stilvoller Schlossatmosphäre statt.</p></article>
+ <article class="tile reveal"><span class="eyebrow">Stil</span><h3>Butter Yellow</h3><p>Creme, Champagner, Gold und ein feines Monogramm-Siegel statt rustikaler Wachstropfen.</p></article>
+ <article class="tile reveal"><span class="eyebrow">Ablauf</span><h3>Leicht & festlich</h3><p>Trauung, Champagner, Dinner und ein langer Abend auf der Tanzfläche.</p></article>
+</div></section>
+<footer class="footer"><h2>Modern versiegelt.</h2><p>Julia & Oliver · 20.08.2027</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Anfahrt</a></footer>
+
+<script>
+const progress=document.querySelector('.progress');
+const update=()=>{
+  const max=document.documentElement.scrollHeight-innerHeight;
+  const p=max>0?scrollY/max:0;
+  if(progress) progress.style.transform=`scaleX(${p})`;
+  document.documentElement.style.setProperty('--scroll', p);
+  document.querySelectorAll('[data-parallax]').forEach(el=>{
+    const r=el.getBoundingClientRect(), s=parseFloat(el.dataset.parallax||'.2');
+    el.style.transform=`translate3d(0,${(r.top-innerHeight/2)*s*-0.12}px,0)`;
+  });
+};
+addEventListener('scroll',update,{passive:true}); update();
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); }),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script></body></html>

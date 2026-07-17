@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F3E6A3"><title>Entwurf 84 — Liquid Gold Seal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --butter:#F6E7A2;--butter-soft:#FFF8D8;--champagne:#D6B75C;--gold:#B99335;
+ --ivory:#FBF8EF;--ink:#211E19;--muted:#71695D;--line:rgba(33,30,25,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",Arial,sans-serif;color:var(--ink);background:var(--ivory);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.progress{position:fixed;z-index:100;left:0;top:0;width:100%;height:3px;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--champagne),var(--gold))}
+.back{position:fixed;z-index:90;left:18px;top:18px;padding:.75rem 1rem;border-radius:999px;border:1px solid var(--line);background:rgba(251,248,239,.82);backdrop-filter:blur(18px);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:.25s}
+.back:hover{transform:translateY(-2px)}
+.eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.36em;text-transform:uppercase;color:var(--gold)}
+.serif{font-family:"Cormorant Garamond",serif}
+.bodoni{font-family:"Bodoni Moda",serif}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.25rem;border-radius:999px;background:var(--ink);color:white;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:.25s}
+.cta:hover{transform:translateY(-2px)}
+.footer{padding:5rem 1.4rem;text-align:center;background:var(--ink);color:#fff9e7}
+.footer h2{font:400 clamp(2.8rem,8vw,6rem)/.9 "Cormorant Garamond",serif}
+.footer p{margin:1rem 0 1.8rem;color:rgba(255,255,255,.65)}
+@media(max-width:720px){.back{left:10px;top:10px}.hide-mobile{display:none!important}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+}
+
+body{background:#f7f1df}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:5vw;padding:8rem 7vw 5rem;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 50%,rgba(246,231,162,.9),transparent 34%),linear-gradient(145deg,#fbf8ef,#efe5c7)}
+.copy{position:relative;z-index:2}.copy h1{font:400 clamp(4rem,10vw,8rem)/.78 "Cormorant Garamond",serif;letter-spacing:-.04em}.copy p{max-width:48ch;margin:1.5rem 0 2rem;line-height:1.8;color:var(--muted)}
+.seal-stage{position:relative;z-index:2;display:grid;place-items:center;min-height:600px;perspective:1000px}
+.liquid-seal{width:min(430px,74vw);aspect-ratio:1;border-radius:47% 53% 49% 51%/53% 43% 57% 47%;display:grid;place-items:center;position:relative;
+ background:
+ radial-gradient(circle at 30% 24%,rgba(255,255,255,.95),transparent 10%),
+ radial-gradient(circle at 72% 76%,#7f5b13,transparent 24%),
+ conic-gradient(from 205deg,#8c6417,#ffe9a2,#a1761f,#f9da75,#76510c,#d7ae48,#8c6417);
+ box-shadow:inset 16px 18px 28px rgba(255,255,255,.32),inset -24px -28px 36px rgba(72,47,5,.34),0 40px 90px rgba(96,68,13,.26);
+ transition:transform .18s ease;animation:morph 8s ease-in-out infinite alternate}
+.liquid-seal:before{content:"";position:absolute;inset:8%;border:1px solid rgba(255,247,204,.65);border-radius:50%;box-shadow:inset 0 0 0 10px rgba(83,57,10,.1)}
+.monogram{text-align:center;color:#39270a;text-shadow:0 1px 0 rgba(255,255,255,.7)}.monogram strong{display:block;font:500 clamp(4rem,10vw,7rem)/.8 "Bodoni Moda",serif}.monogram span{font-size:.66rem;letter-spacing:.32em;text-transform:uppercase}
+@keyframes morph{to{border-radius:53% 47% 56% 44%/45% 57% 43% 55%;transform:rotate(4deg)}}
+.detail{padding:8rem 7vw;background:#211e19;color:white;display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw}
+.detail h2{font:400 clamp(3rem,7vw,6rem)/.88 "Cormorant Garamond",serif}.detail p{line-height:1.85;color:rgba(255,255,255,.64)}
+.rings{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}.ring{padding:1.5rem;border-top:1px solid rgba(246,231,162,.35)}.ring strong{display:block;font:400 2rem "Bodoni Moda",serif;color:var(--butter)}
+@media(max-width:850px){.hero,.detail{grid-template-columns:1fr}.hero{padding-top:7rem}.seal-stage{min-height:480px}.detail{gap:3rem}}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero">
+ <div class="copy reveal"><span class="eyebrow">Modern heirloom</span><h1>Liquid<br>Gold.</h1><p>Ein fließendes, metallisches Siegel mit Lichtreflexen und sanfter 3D-Reaktion. Luxuriös, aber deutlich reduzierter als klassisches Wachs.</p><a class="cta" href="#details">Einladung öffnen</a></div>
+ <div class="seal-stage"><div class="liquid-seal" data-tilt><div class="monogram"><strong>J&O</strong><span>20 · 08 · 2027</span></div></div></div>
+</header>
+<section class="detail" id="details"><div class="reveal"><span class="eyebrow">Julia & Oliver</span><h2>Ein Tag, der bleibt.</h2></div><div class="reveal"><p>Wir heiraten am Freitag, den 20. August 2027, im Schloss Herten. Freut euch auf eine Trauung im Park, Champagner im Sommerlicht und ein langes Fest im Schloss.</p><div class="rings"><div class="ring"><strong>15:00</strong>Trauung</div><div class="ring"><strong>17:00</strong>Empfang</div><div class="ring"><strong>19:00</strong>Dinner</div></div></div></section>
+<footer class="footer"><h2>Golden moments await.</h2><p>Schloss Herten · 20. August 2027</p><a class="cta" style="background:var(--butter);color:var(--ink)" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Route öffnen</a></footer>
+
+<script>
+const progress=document.querySelector('.progress');
+const updateBase=()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ const p=max>0?scrollY/max:0;
+ if(progress)progress.style.transform=`scaleX(${p})`;
+ document.documentElement.style.setProperty('--scroll',p.toFixed(4));
+ document.querySelectorAll('[data-parallax]').forEach(el=>{
+   const r=el.getBoundingClientRect(),speed=parseFloat(el.dataset.parallax||'.2');
+   el.style.transform=`translate3d(0,${(r.top-innerHeight/2)*speed*-0.12}px,0)`;
+ });
+};
+addEventListener('scroll',updateBase,{passive:true});updateBase();
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+ if(entry.isIntersecting)entry.target.classList.add('on');
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const seal=document.querySelector('[data-tilt]');
+seal?.addEventListener('pointermove',e=>{
+ const r=seal.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+ seal.style.transform=`perspective(900px) rotateX(${-y*12}deg) rotateY(${x*14}deg) scale(1.02)`;
+});
+seal?.addEventListener('pointerleave',()=>seal.style.transform='');
+</script></body></html>

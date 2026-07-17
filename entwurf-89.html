@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F6E7A2"><title>Entwurf 89 — Archival Seal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --butter:#F6E7A2; --butter-light:#FFFBEA; --gold:#C79A2A; --gold-soft:#E4C979;
+  --cream:#FBF7EE; --ink:#2E271D; --muted:#756A58; --line:rgba(46,39,29,.14); --white:#FFFDF9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.back{position:fixed;left:16px;top:16px;z-index:50;padding:.8rem 1rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,253,249,.84);backdrop-filter:blur(12px);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.progress{position:fixed;left:0;top:0;height:4px;width:100%;background:var(--gold);transform-origin:left;transform:scaleX(0);z-index:60}
+.eyebrow{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.serif{font-family:"Cormorant Garamond",serif}
+.display{font-family:Italiana,serif}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:1rem 1.3rem;border-radius:999px;background:var(--ink);color:white;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.footer{padding:4rem 1.4rem;text-align:center;background:var(--ink);color:var(--butter-light)}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2.4rem,7vw,5rem)}
+.footer p{margin:.8rem 0 1.4rem;color:rgba(255,255,255,.72)}
+@media(max-width:720px){.back{left:10px;top:10px}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+
+body{background:#f7f3e8}
+.hero{min-height:100vh;padding:7rem 6vw 4rem;display:grid;grid-template-columns:.8fr 1.2fr;gap:6vw;align-items:center}
+.title h1{font:400 clamp(4rem,11vw,8rem)/.8 "Cormorant Garamond",serif}
+.title p{margin-top:1.3rem;color:var(--muted);line-height:1.85;max-width:42ch}
+.stack{position:relative;min-height:76vh}
+.paper{position:absolute;width:min(72vw,580px);min-height:62vh;padding:2.4rem;background:#fffdf8;border:1px solid rgba(46,39,29,.09);box-shadow:0 25px 60px rgba(82,68,36,.12)}
+.paper:nth-child(1){left:0;top:0;transform:rotate(-3deg)}
+.paper:nth-child(2){left:8%;top:9%;transform:rotate(2deg)}
+.paper:nth-child(3){left:16%;top:18%;transform:rotate(-1deg)}
+.paper h3{font:400 2.4rem "Cormorant Garamond",serif}
+.paper p{margin-top:1rem;color:var(--muted);line-height:1.75}
+.tab{position:absolute;top:1.2rem;right:1.2rem;width:88px;height:88px;border-radius:50%;background:radial-gradient(circle at 30% 28%,#fff9dd 0 8%,#e0bf60 25%,#c08f22 70%,#8e6820 100%);display:grid;place-items:center;font:400 1.8rem Italiana;color:#fff8dc;box-shadow:0 14px 35px rgba(158,120,30,.2)}
+@media(max-width:840px){.hero{grid-template-columns:1fr}.stack{min-height:900px}.paper{width:84vw}}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<section class="hero">
+ <div class="title reveal"><span class="eyebrow">Archiv der Liebe</span><h1>Archival<br>Seal</h1><p>Ein moderner Archiv- und Papierlook mit mehreren Einladungsebenen – jeweils durch ein klares Monogramm-Siegel zusammengehalten.</p></div>
+ <div class="stack reveal">
+   <article class="paper"><div class="tab">J&O</div><span class="eyebrow">01 · Einladung</span><h3>Save the date</h3><p>Freitag, 20. August 2027. Julia & Oliver laden euch nach Schloss Herten ein.</p></article>
+   <article class="paper"><div class="tab">20</div><span class="eyebrow">02 · Tagesablauf</span><h3>Feiern im Sommerlicht</h3><p>Trauung im Park, Empfang im Garten und Dinner im Schloss – begleitet von Butter Yellow und Champagnertönen.</p></article>
+   <article class="paper"><div class="tab">♥</div><span class="eyebrow">03 · Details</span><h3>Dresscode & RSVP</h3><p>Hellgrau und Pastell. Wir freuen uns auf einen unvergesslichen Abend mit euch.</p></article>
+ </div>
+</section>
+<footer class="footer"><h2>Wie eine Einladung aus dem Archiv.</h2><p>Julia & Oliver · 20.08.2027 · Schloss Herten</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Anfahrt</a></footer>
+
+<script>
+const progress=document.querySelector('.progress');
+const update=()=>{
+  const max=document.documentElement.scrollHeight-innerHeight;
+  const p=max>0?scrollY/max:0;
+  if(progress) progress.style.transform=`scaleX(${p})`;
+  document.documentElement.style.setProperty('--scroll', p);
+  document.querySelectorAll('[data-parallax]').forEach(el=>{
+    const r=el.getBoundingClientRect(), s=parseFloat(el.dataset.parallax||'.2');
+    el.style.transform=`translate3d(0,${(r.top-innerHeight/2)*s*-0.12}px,0)`;
+  });
+};
+addEventListener('scroll',update,{passive:true}); update();
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); }),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script></body></html>
