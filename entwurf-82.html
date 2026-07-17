@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F5EEDF"><title>Entwurf 82 — Cire d'Or</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#B99544;--gold-2:#E4CE93;--parch:#F5EEDF;--parch-2:#EFE5CE;--ink:#3B3426;--muted:#7E7560;--line:rgba(59,52,38,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Jost,Arial,sans-serif;font-weight:300;color:var(--ink);background:linear-gradient(var(--parch),var(--parch-2));overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.back{position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid var(--line);border-radius:999px;background:rgba(245,238,223,.88);backdrop-filter:blur(14px);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transition:.25s}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:3px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.68rem;text-transform:uppercase;letter-spacing:.4em;font-weight:500;color:var(--gold)}
+.serif{font-family:"Cormorant Garamond",serif}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:6rem 1.5rem;position:relative;overflow:hidden}
+.orn{position:absolute;font-family:"Cormorant Garamond",serif;color:rgba(185,149,68,.16);font-size:clamp(9rem,26vw,20rem);line-height:1;user-select:none;pointer-events:none}
+.o1{left:-2%;top:6%}.o2{right:-2%;bottom:4%;rotate:180deg}
+.seal-wrap{position:relative;width:170px;height:200px;margin:0 auto 2.2rem}
+.seal{position:absolute;left:50%;top:24px;translate:-50%;width:150px;height:150px;border:none;cursor:pointer;background:transparent}
+.wax{width:100%;height:100%;border-radius:47% 53% 51% 49%/52% 48% 54% 46%;background:radial-gradient(circle at 36% 30%,#efdca6,var(--gold) 50%,#7f6524 94%);box-shadow:0 16px 40px rgba(59,52,38,.35),inset 0 3px 7px rgba(255,255,255,.5),inset 0 -7px 16px rgba(72,55,14,.5);display:grid;place-items:center;transition:transform 1s ease,opacity 1s ease}
+.wax svg{width:78px;height:78px}
+.wax svg text{font-family:"Cormorant Garamond",serif;font-size:44px;fill:#503f11}
+.wax svg circle{fill:none;stroke:rgba(80,63,17,.5);stroke-width:1.4}
+.drip{position:absolute;left:50%;top:158px;translate:-50%;width:14px;height:0;border-radius:0 0 10px 10px;background:linear-gradient(#a8862f,#7f6524);animation:drip 5s ease-in-out infinite}
+@keyframes drip{0%,55%{height:0;opacity:0}62%{opacity:1}80%{height:34px;opacity:1}92%,100%{height:38px;opacity:0}}
+body.open .seal .wax{transform:scale(.42) rotate(-16deg);opacity:0}
+body.open .seal{pointer-events:none}
+body.open .drip{display:none}
+.inv{opacity:0;transform:translateY(14px);transition:opacity 1.2s .35s ease,transform 1.2s .35s ease}
+body.open .inv{opacity:1;transform:none}
+.inv .pre{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.2rem,3.4vw,1.7rem);color:var(--muted)}
+.inv h1{font-size:clamp(3.2rem,11vw,7.2rem);font-weight:300;line-height:1.02;letter-spacing:.01em}
+.inv h1 .amp{font-style:italic;color:var(--gold);font-weight:300}
+.inv .sub{margin-top:1.5rem;letter-spacing:.42em;text-transform:uppercase;font-size:.74rem;color:var(--muted)}
+.hint{position:absolute;bottom:clamp(28px,6vh,56px);left:0;right:0;font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);transition:opacity .5s}
+body.open .hint{opacity:0}
+.section{max-width:700px;margin:0 auto;padding:8rem 1.5rem;text-align:center}
+.section h2{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:300}
+.prog{margin-top:3rem;display:grid;gap:0}
+.act{padding:2rem 1rem;border-top:1px solid var(--line)}
+.act:last-child{border-bottom:1px solid var(--line)}
+.act .no{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.1rem;color:var(--gold)}
+.act h3{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(1.7rem,4.6vw,2.4rem);margin:.3rem 0}
+.act p{color:var(--muted);line-height:1.85;max-width:46ch;margin:0 auto}
+.footer{padding:5rem 1.4rem;text-align:center;background:var(--ink);color:#f1e9d4}
+.footer h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(2.1rem,6vw,3.8rem);font-style:italic}
+.footer p{margin:.8rem 0 1.6rem;color:rgba(241,233,212,.66)}
+.cta{display:inline-flex;padding:1rem 1.6rem;border:1px solid var(--gold-2);color:var(--gold-2);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:.3s}
+.cta:hover{background:var(--gold-2);color:var(--ink)}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+ .inv{opacity:1;transform:none}
+ .drip{display:none}
+}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero">
+ <span class="orn o1" aria-hidden="true">❦</span>
+ <span class="orn o2" aria-hidden="true">❦</span>
+ <div>
+  <div class="seal-wrap">
+   <button class="seal" id="seal" aria-label="Wachssiegel brechen und Einladung öffnen">
+    <span class="wax">
+     <svg viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="46"/>
+      <text x="26" y="64">J</text>
+      <text x="52" y="64" font-style="italic">O</text>
+     </svg>
+    </span>
+   </button>
+   <span class="drip" aria-hidden="true"></span>
+  </div>
+  <div class="inv">
+   <p class="pre">Avec tout notre amour —</p>
+   <h1 class="serif">Julia <span class="amp">&amp;</span> Oliver</h1>
+   <p class="sub">Le 20 Août 2027 · Schloss Herten</p>
+  </div>
+ </div>
+ <p class="hint">Le sceau — bitte brechen</p>
+</header>
+
+<section class="section">
+ <span class="eyebrow reveal">Programme de la Journée</span>
+ <h2 class="serif reveal">Ein Fest in drei Akten.</h2>
+ <div class="prog">
+  <div class="act reveal"><span class="no">Acte I · 15h00</span><h3 class="serif">La Cérémonie</h3><p>Freie Trauung im Schlosspark – unter Linden, im Duft des Spätsommers.</p></div>
+  <div class="act reveal"><span class="no">Acte II · 17h00</span><h3 class="serif">Le Champagne</h3><p>Empfang auf der Terrasse, dazu Petit Fours und das schönste Licht des Tages.</p></div>
+  <div class="act reveal"><span class="no">Acte III · 19h00</span><h3 class="serif">Le Dîner &amp; Le Bal</h3><p>Festmenü im Schlosssaal, danach gehört das Parkett euch – jusqu'au matin.</p></div>
+ </div>
+</section>
+
+<footer class="footer"><h2>Répondez, s'il vous plaît.</h2><p>Julia &amp; Oliver · Schloss Herten</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Route öffnen</a></footer>
+
+<script>
+const open=()=>document.body.classList.add('open');
+document.getElementById('seal').addEventListener('click',open);
+addEventListener('scroll',()=>{if(scrollY>60)open()},{passive:true});
+const progress=document.querySelector('.progress');
+addEventListener('scroll',()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.transform=`scaleX(${max>0?scrollY/max:0})`;
+},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F1EBDD"><title>Entwurf 81 — Bütten &amp; Band</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Monsieur+La+Doulaise&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--butter:#F6E7A2;--gold:#C2A050;--gold-2:#E7D399;--bg:#F1EBDD;--paper:#FBF7EC;--ink:#3A342A;--muted:#7C7462;--line:rgba(58,52,42,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Karla,Arial,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.back{position:fixed;z-index:50;left:18px;top:18px;padding:.75rem 1rem;border:1px solid var(--line);border-radius:999px;background:rgba(251,247,236,.88);backdrop-filter:blur(14px);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;transition:.25s}
+.back:hover{transform:translateY(-2px)}
+.progress{position:fixed;z-index:60;top:0;left:0;width:100%;height:3px;transform:scaleX(0);transform-origin:left;background:var(--gold)}
+.eyebrow{font-size:.68rem;text-transform:uppercase;letter-spacing:.38em;font-weight:700;color:var(--gold)}
+.serif{font-family:"EB Garamond",serif}
+.script{font-family:"Monsieur La Doulaise",cursive}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.hero{min-height:100vh;display:grid;place-items:center;padding:6rem 1.2rem}
+.buetten{width:min(620px,94vw);position:relative;background:var(--paper);padding:clamp(3rem,8vw,5rem) clamp(1.6rem,6vw,4rem);text-align:center;box-shadow:0 50px 110px -70px rgba(58,52,42,.6);border-radius:6px 10px 8px 12px}
+.buetten:before{content:"";position:absolute;inset:-7px;z-index:-1;background:var(--paper);opacity:.55;border-radius:14px 8px 16px 10px;filter:blur(1px)}
+.buetten:after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse at 20% 10%,rgba(58,52,42,.035),transparent 42%),radial-gradient(ellipse at 85% 80%,rgba(58,52,42,.045),transparent 46%);pointer-events:none}
+.ribbon{position:absolute;top:0;bottom:0;left:50%;width:clamp(58px,10vw,84px);translate:-50%;background:linear-gradient(90deg,#e9d089,#f4e5b4 30%,#d9bd6e 70%,#c9a854);box-shadow:0 0 0 1px rgba(58,52,42,.06),inset 0 0 22px rgba(255,255,255,.4);transition:transform 1.4s cubic-bezier(.6,.05,.2,1),opacity 1.2s ease;z-index:3}
+.hero-seal{position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:4;width:104px;height:104px;border-radius:50%;border:none;cursor:pointer;background:radial-gradient(circle at 35% 28%,#eed9a0,var(--gold) 52%,#8d7233 92%);box-shadow:0 14px 34px rgba(58,52,42,.35),inset 0 2px 5px rgba(255,255,255,.55),inset 0 -5px 12px rgba(90,70,25,.5);transition:transform 1s ease,opacity 1s ease}
+.hero-seal span{position:absolute;inset:0;display:grid;place-items:center;font-family:"EB Garamond",serif;font-size:1.45rem;letter-spacing:.12em;color:#4d3d14}
+body.open .ribbon{transform:translateY(103%);opacity:0}
+body.open .hero-seal{transform:translate(0,110px) scale(.5) rotate(18deg);opacity:0;pointer-events:none}
+.inv{position:relative;z-index:2;opacity:.28;filter:blur(1px);transition:opacity 1.2s .4s ease,filter 1.2s .4s ease}
+body.open .inv{opacity:1;filter:none}
+.inv .names{font-size:clamp(3.6rem,13vw,6.4rem);line-height:1.05;color:var(--gold);font-weight:400}
+.inv h1{font-size:clamp(1.4rem,4vw,2rem);font-weight:500;letter-spacing:.3em;text-transform:uppercase;margin-top:.6rem}
+.inv .date{margin-top:1.6rem;font-family:"EB Garamond",serif;font-style:italic;font-size:1.15rem;color:var(--muted)}
+.inv .rule{width:56px;height:1px;background:var(--gold);margin:1.8rem auto}
+.inv p.txt{color:var(--muted);line-height:1.9;max-width:42ch;margin:0 auto;font-size:.98rem}
+.hint{margin-top:1.6rem;text-align:center;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);transition:opacity .5s}
+body.open .hint{opacity:0}
+.section{max-width:820px;margin:0 auto;padding:7.5rem 1.5rem;text-align:center}
+.section h2{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:400}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3rem;text-align:center}
+.card{background:var(--paper);padding:2.2rem 1.5rem;border-radius:4px 8px 5px 9px;box-shadow:0 26px 60px -48px rgba(58,52,42,.6)}
+.card h3{font-family:"EB Garamond",serif;font-weight:500;font-size:1.55rem;margin:.5rem 0 .35rem}
+.card p{color:var(--muted);font-size:.93rem;line-height:1.75}
+.footer{padding:5rem 1.4rem;text-align:center;background:var(--ink);color:#f3ecd9}
+.footer h2{font-family:"EB Garamond",serif;font-weight:400;font-size:clamp(2rem,6vw,3.4rem)}
+.footer p{margin:.8rem 0 1.6rem;color:rgba(243,236,217,.66)}
+.cta{display:inline-flex;padding:1rem 1.5rem;border-radius:999px;background:var(--gold-2);color:var(--ink);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+@media(max-width:740px){.cards{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+ .inv{opacity:1;filter:none}
+}
+</style></head>
+<body><div class="progress"></div><a class="back" href="index.html">← Alle Entwürfe</a>
+
+<header class="hero">
+ <div>
+  <div class="buetten">
+   <div class="ribbon" aria-hidden="true"></div>
+   <button class="hero-seal" id="seal" aria-label="Siegel lösen und Einladung öffnen"><span>J &amp; O</span></button>
+   <div class="inv">
+    <div class="script names">Julia &amp; Oliver</div>
+    <h1>geben sich das Ja-Wort</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="txt serif" style="font-style:italic;font-size:1.12rem">Wir laden euch von Herzen ein, diesen Tag mit uns zu feiern – bei einer freien Trauung, einem langen Abendessen und einer noch längeren Nacht.</p>
+    <p class="date">20. August 2027 · ab 15 Uhr · Schloss Herten</p>
+   </div>
+  </div>
+  <p class="hint">Siegel lösen</p>
+ </div>
+</header>
+
+<section class="section">
+ <span class="eyebrow reveal">Handgeschöpft geplant</span>
+ <h2 class="serif reveal">Der Tag in drei Bögen.</h2>
+ <div class="cards">
+  <div class="card reveal"><span class="eyebrow">15:00</span><h3>Trauung</h3><p>Im Schlosspark, unter freiem Himmel.</p></div>
+  <div class="card reveal"><span class="eyebrow">17:00</span><h3>Empfang</h3><p>Champagner und goldenes Nachmittagslicht.</p></div>
+  <div class="card reveal"><span class="eyebrow">19:00</span><h3>Fest</h3><p>Dinner und Tanz im Schlosssaal.</p></div>
+ </div>
+</section>
+
+<footer class="footer"><h2>Mit Band und Siegel: Ihr seid eingeladen.</h2><p>Julia &amp; Oliver · Schloss Herten</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Schloss+Herten">Route öffnen</a></footer>
+
+<script>
+const open=()=>document.body.classList.add('open');
+document.getElementById('seal').addEventListener('click',open);
+addEventListener('scroll',()=>{if(scrollY>60)open()},{passive:true});
+const progress=document.querySelector('.progress');
+addEventListener('scroll',()=>{
+ const max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.transform=`scaleX(${max>0?scrollY/max:0})`;
+},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>
